@@ -3,18 +3,22 @@
   # disable default sound module. see https://nixos.wiki/wiki/PipeWire
 
   services.xserver.enable = true;
+  
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    theme = "chili";
+    theme = "catppuccin-mocha";
   };
 
-  environment.systemPackages = with pkgs;
-    [
-    sddm-chili-theme
-    ];
-
-
+environment.systemPackages = with pkgs; [(
+  catppuccin-sddm.override {
+    flavor = "mocha";
+#    font  = "Noto Sans";
+#    fontSize = "9";
+#    background = "${./wallpaper.png}";
+    loginBackground = true;
+  }  
+)];
 
 
   # Modify the SDDM theme to chili by getting it directly from github (todo: use the sddm-chili-theme which is a nix pkg)
