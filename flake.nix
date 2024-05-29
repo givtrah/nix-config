@@ -84,7 +84,16 @@
           }
         ]; 
       };
-      
+
+      taupa = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+	modules = [
+	  ./nixos/hosts/taupa
+	  ];
+	};
+
+
+
       # Lenovo Laptop (16/2 TB) - Nix OS stable (23.11)
 #      taulap = nixpkgs.lib.nixosSystem {
 #        system = "x86_64-linux";
