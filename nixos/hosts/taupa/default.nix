@@ -13,6 +13,10 @@
       ../../users.nix
       ../../features/locale_tz.nix
       ../../features/sound.nix
+      ../../features/sddm.nix
+      ../../features/plasma6.nix
+
+
 
     ];
 
@@ -62,9 +66,9 @@
  };
 
 
-nixpkgs.config.permittedInsecurePackages = [
-               # "mailspring-1.12.0"
-              ];
+# nixpkgs.config.permittedInsecurePackages = [
+#               # "mailspring-1.12.0"
+#              ];
 
 
   # Enable periodic scrub on btrfs (default once per month) as well as periodic trim (default once per week)
@@ -88,31 +92,16 @@ nixpkgs.config.permittedInsecurePackages = [
     # consider using "steam-run" to run non-nix programs
   ]; 
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
 
-
-  # Enable the SDDM display manager
-  services.xserver.displayManager.sddm.enable = true;
-
-  # Modify the SDDM theme to chili by getting it directly from github (todo: use the sddm-chili-theme which is a nix pkg)
-  services.xserver.displayManager.sddm.theme = "${(pkgs.fetchFromGitHub {
-      owner = "MarianArlt";
-      repo = "kde-plasma-chili";
-      rev = "a371123959676f608f01421398f7400a2f01ae06";
-      sha256 = "17pkxpk4lfgm14yfwg6rw6zrkdpxilzv90s48s2hsicgl3vmyr3x";
-  })}";
-
-  # Enable the plasma 5 Desktop Environment (KDE 5.x) and set as default in SDDM
-  services.xserver.desktopManager.plasma5.enable = true;
-  services.xserver.displayManager.defaultSession = "plasmawayland"; # wayland as default
 
   # Enable qtile
-  services.xserver.windowManager.qtile.enable = true;
+#  services.xserver.windowManager.qtile.enable = true;
 
   # Enable hyprland
 
   # Enable CUPS, ipp-usb and avahi to print documents (CUPS may not be necessary!).
+
+
   services.printing.enable = true;
   services.ipp-usb.enable = true;
   services.avahi.enable = true;

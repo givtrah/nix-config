@@ -12,7 +12,10 @@
     
       # features 
       ../../features/sound.nix
-    
+      ../../features/locale_tz.nix
+      
+      ../../features/sddm.nix
+      ../../features/plasma6.nix
 
 
     # modules - should be moved to home?
@@ -85,49 +88,14 @@
   #  };
 
   
-  # Set your time zone.
-  time.timeZone = "Europe/Copenhagen";
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  # System specific X11 / display components Enable the X11 windowing system.
 
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_DK.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "da_DK.UTF-8";
-    LC_IDENTIFICATION = "da_DK.UTF-8";
-    LC_MEASUREMENT = "da_DK.UTF-8";
-    LC_MONETARY = "da_DK.UTF-8";
-    LC_NAME = "da_DK.UTF-8";
-    LC_NUMERIC = "da_DK.UTF-8";
-    LC_PAPER = "da_DK.UTF-8";
-    LC_TELEPHONE = "da_DK.UTF-8";
-    LC_TIME = "da_DK.UTF-8";
-  };
-
-
-  console.keyMap = "dk-latin1";
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
   services.xserver.synaptics.palmDetect = true; 
-
-# services.xserver.displayManager.defaultSession = "plasmawayland";
 
 #  services.desktopManager.cosmic.enable = true;
 #  services.displayManager.cosmic-greeter.enable = true;  
   
-
-  # Configure keymap in X11
-  services.xserver = {
-    xkb.layout = "dk";
-    xkb.variant = "";
-  };
-
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -139,8 +107,9 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git # MUST be first as everything else (in flakes) depends on git
+    gh
     wget
-    vim # Nano is horrible, install vim systemwide
+    vim # Nano is horrible, install vim systemwide - notice that neovim will be installed separately...
   ];
 
   environment.variables.EDITOR = "vim";  # systemwide default editor, screw nano
