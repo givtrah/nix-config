@@ -13,17 +13,32 @@ git config --global user.name "givtrah"
 
 git config --global user.email "THESECRET@email.com"
 
-mkdir ~/.dotfiles
 
+# Clone repo
+mkdir ~/.dotfiles
 cd ~/.dotfiles
 
+git clone git@github.com:givtrah/nix-config
+
+or (don't do this, use the above! or you have to change git repo from https to ssh later...):
 git clone https://github.com/givtrah/nix-config
 
 # add all (new) files
-git add *
+git add .
 
-# push new commit
+# commit
 git commit -m "reason"
+
+# push
+git push
+
+# solve problems with repo being different from local
+(by overwriting local with the repo)
+
+git fetch --all
+git reset --hard origin/main
+git pull
+
 
 # Overall directory structure
 
