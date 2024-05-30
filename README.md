@@ -1,18 +1,20 @@
 # nix-config
 Nixos files for my installations
 
-
 # How to use
 Make sure git and gh is installed
 
 # Auth
+```
 gh auth login # login to github using ssh and auth token
+```
 
 # Tell git who you are
+```
 git config --global user.name "givtrah"
 
 git config --global user.email "THESECRET@email.com"
-
+```
 
 # Clone repo
 mkdir ~/.dotfiles
@@ -39,6 +41,15 @@ git fetch --all
 git reset --hard origin/main
 git pull
 
+If you feel you may use the local changes later you can do:
+
+git stash
+
+before doing the above fetch/reset/pull
+
+then to reapply stashed changes later do:
+
+git stash pop
 
 # Overall directory structure
 
