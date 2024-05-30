@@ -194,8 +194,8 @@ jellyfin-media-player
   zettlr
   remmina
   nomachine-client
-  libsForQt5.kcalc
-  libsForQt5.kate
+#  libsForQt5.kcalc
+#  libsForQt5.kate
 
   # browsers
   (wrapFirefox (firefox-unwrapped.override { pipewireSupport = true;}) {} ) # add pipewire support to firefox, needed for screen sharing under wayland
