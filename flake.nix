@@ -76,8 +76,15 @@
 	specialArgs = { inherit inputs; inherit nixpkgs; inherit home-manager;};
 	modules = [
 	  ./nixos/hosts/taupa
-	  ];
-	};
+	  
+	  home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.ohm = import ./home/hosts/taupa.nix;
+	    home-manager.extraSpecialArgs = {inherit inputs; inherit nixpkgs; };
+	  }
+	];
+      };
 
       # Lenovo Laptop (16/2 TB) - Nix OS unstable
       taulap = nixpkgs.lib.nixosSystem {

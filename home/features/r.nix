@@ -2,51 +2,34 @@
 
   home.packages = with pkgs; 
 
-  let
-    R-with-my-packages = rWrapper.override{
-      packages = with rPackages; [ 
-        tidyverse
-        pastecs
-        jtools
-        huxtable
-        officer
-        tableone
-        data_table
-        HDF5Array
-        ]; };
-  in
 
 
-
-  [
-    R-with-my-packages
-
-
-
-
-
-
-
+let
+  # Define your desired packages here
+  myRPackages = with pkgs; [
+    tidyverse
+    pastecs
+    jtools
+    huxtable
+    officer
+    tableone
+    data_table
+    HDF5Array
   ];
 
+  R-with-my-packages = rWrapper.override {
+    packages = myRPackages;
+  };
 
+  RStudio-with-my-packages = rstudioWrapper.override {
+    packages = myRPackages;
+  };
+in
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[
+  R-with-my-packages
+  RStudio-with-my-packages
+];
 
 
 
