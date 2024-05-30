@@ -66,14 +66,17 @@ git stash pop
 
 # Nix os commands in dir
 
+Update system according to the flake and nix files
 ```
-sudo nixos-rebuild boot --flake ./#taumac --impure
+sudo nixos-rebuild boot --flake . --impure
 
+(impure for now, asahi only works well with impure and I have other issues as well that requires impure for now until I solve the issues)
 ```
+
+Update the flake file (e.g. actually do an update! run update system above afterwards)
 ```
 sudo nix flake update
 
 ```
 
 
-**
