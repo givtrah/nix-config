@@ -51,30 +51,15 @@
 
     nixosConfigurations = {
       nixpkgs.config.allowUnfree = true;
-      # Macbook Air M2 (16/512) - Nix OS unstable
 
+      # Macbook Air M2 (16 GB / 512 GB) - Nix OS unstable
       taumac = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         specialArgs = { inherit inputs; inherit nixpkgs; inherit home-manager; inherit apple-silicon; inherit nixos-cosmic;};
         modules = [
 
-
-#          {
-#            nix.settings = {
-#              substituters = [ "https://cosmic.cachix.org/" ];
-#              trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
-#            };
- #         }
-
           ./nixos/hosts/taumac
 	  inputs.apple-silicon.nixosModules.apple-silicon-support
-#          { nix.settings = {
-#              substituters = [ "https://cosmic.cachix.org/" ];
-#              trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
-#            };
-#          }
-
-          nixos-cosmic.nixosModules.default
 
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
@@ -84,25 +69,25 @@
           }
         ]; 
       };
-
+      
+      # Main desktop @ uni 5700x 64 GB multi-GPU, 2 TB nvme - Nix OS unstable
       taupa = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+	specialArgs = { inherit inputs; inherit nixpkgs; inherit home-manager;};
 	modules = [
 	  ./nixos/hosts/taupa
 	  ];
 	};
 
-
-
-      # Lenovo Laptop (16/2 TB) - Nix OS stable (23.11)
-#      taulap = nixpkgs.lib.nixosSystem {
-#        system = "x86_64-linux";
-#        specialArgs = {inherit inputs;};
-#        modules = [
-#          ./nixos/hosts/taulap
+      # Lenovo Laptop (16/2 TB) - Nix OS unstable
+      taulap = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./nixos/hosts/taulap
 #          home-manager.nixosModules.home-manager
-#        ];
-#      };
+        ];
+      };
     };
 
   };
