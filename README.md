@@ -4,6 +4,12 @@ Nixos files for my installations
 # How to use
 Make sure git and gh is installed
 
+You can start out by using a nix-shell that has gh and git:
+
+```
+nix-shell -p git gh
+```
+
 # Auth
 ```
 gh auth login # login to github using ssh and auth token
