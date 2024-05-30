@@ -153,130 +153,17 @@
   # $ nix search wget
   environment.systemPackages = with pkgs;
 
-  let
-    RStudio-with-my-packages = rstudioWrapper.override{
-      packages = with rPackages; [ 
-        tidyverse
-	pastecs
-	jtools
-	huxtable
-	officer
-	tableone
-	data_table
-	HDF5Array
-	]; };
-  in
-
-
-
   [
   git # git must be first when using flakes as it clones its dependencies using git
   gh
-  curl
   wget
-  jellyfin-media-player
-  neovim # editor of choice
-  dropbox
-  mesa-demos # includes everything in glxinfo
-  libreoffice-qt
-  hunspell
-  hunspellDicts.da_DK
-  hunspellDicts.en_US
-  zotero
-  zoom-us
-  microsoft-edge
-  teams-for-linux
-  google-chrome
-  google-fonts
-  corefonts
-  vistafonts
-  vulkan-tools
-  gnome.adwaita-icon-theme
-  btop
-  steam-run 
-  tmux
-  v4l-utils
-  guvcview
-  usbutils
-  nerdfonts
-
-  inkscape
-
-  smartmontools
-  gsmartcontrol
-  # productivity / work
-  kitty
-  kitty-themes
-  kitty-img
-  starship
-  pywal
-
-  pdfsam-basic
-  zettlr
-  remmina
-  RStudio-with-my-packages
-  nomachine-client
-  libsForQt5.kcalc
-  libsForQt5.kate
-
-  # browsers
-  (wrapFirefox (firefox-unwrapped.override { pipewireSupport = true;}) {} ) # add pipewire support to firefox, needed for screen sharing under wayland
-  microsoft-edge
-  google-chrome
-  librewolf
-
-  # Network
-  
-  tailscale # FW passthrough
-  autossh # FW passthrough
-
-
-  # System tools
-  dmidecode # for hardware information
-  inxi # for hardware information
-  lm_sensors # temps
-
-
-  # for printing
-  libusb1
-
-  #
-  virtiofsd
-
-  # Swayfx
-  swayfx
-  swayr
-  swayws
-  swaybg
-  swayosd
-  swayimg
-  swaycwd
-  swayrbar
-  swaylock
-  swaykbdd
-  swayidle
-  swaycons
-  swaytools
-  swaysettings
-  swaynotificationcenter
-  waybar
-  wofi
-  wayshot
-  autotiling
-  rofi-wayland
-
-  pciutils # for lspci
-  OVMF # for qemu secure boot emulation
-  looking-glass-client # for windows VM
-  swtpm
-  sunshine # remote desktop server (moonshine is client)
-  moonlight-qt # remote desktop client
+  vim
+  neovim
+  tailscale
   ];
 
+
   # firefox
-
-
-
 
  environment.variables.EDITOR = "nvim"; # default editor is neovim
 
@@ -315,8 +202,6 @@
       };
     };
   programs.virt-manager.enable = true;
-
-
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

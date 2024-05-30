@@ -6,7 +6,7 @@
 
 let
   # Define your desired packages here
-  myRPackages = with pkgs; [
+  myRPackages = with rPackages; [
     tidyverse
     pastecs
     jtools

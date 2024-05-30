@@ -140,8 +140,10 @@ home.packages =  with pkgs; [
     mesa-demos
     kitty
 #    btop
-    maestral
-    maestral-gui
+#    maestral
+#     maestral-gui
+
+    dropbox
     libreoffice-qt
     hunspell
     hunspellDicts.da_DK
@@ -153,6 +155,80 @@ home.packages =  with pkgs; [
     fastfetch
 
 #   zotero - no zotero in unstable for aarch64, only in 23.11, find out how to fix this!
+
+
+
+jellyfin-media-player
+# in system conf  neovim # editor of choice
+  mesa-demos # includes everything in glxinfo
+  zotero
+  zoom-us
+  microsoft-edge
+  teams-for-linux
+  google-chrome
+  google-fonts
+  corefonts
+  vistafonts
+  vulkan-tools
+  gnome.adwaita-icon-theme
+  btop
+  steam-run 
+  tmux
+  v4l-utils
+  guvcview
+  usbutils
+  nerdfonts
+
+  inkscape
+
+  smartmontools
+  gsmartcontrol
+  # productivity / work
+  kitty
+  kitty-themes
+  kitty-img
+  starship
+  pywal
+
+  pdfsam-basic
+  zettlr
+  remmina
+  nomachine-client
+  libsForQt5.kcalc
+  libsForQt5.kate
+
+  # browsers
+  (wrapFirefox (firefox-unwrapped.override { pipewireSupport = true;}) {} ) # add pipewire support to firefox, needed for screen sharing under wayland
+  microsoft-edge
+  google-chrome
+  librewolf
+
+  # Network
+  
+# in systemconf  tailscale # FW passthrough
+  autossh # FW passthrough
+
+
+  # System tools
+  dmidecode # for hardware information
+  inxi # for hardware information
+  lm_sensors # temps
+
+
+  # for printing
+  libusb1
+
+  #
+  virtiofsd
+
+  pciutils # for lspci
+  OVMF # for qemu secure boot emulation
+  looking-glass-client # for windows VM
+  swtpm
+  sunshine # remote desktop server (moonshine is client)
+  moonlight-qt # remote desktop client
+
+
 
 
 
