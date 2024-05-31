@@ -9,20 +9,15 @@
       # Include support for apple silicon (M* cpus)
 #      inputs.apple-silicon.nixosModules.apple-silicon-support
 
-    
-      # features 
-      ../../features/sound.nix
-      ../../features/locale_tz.nix
-      
-      ../../features/sddm.nix
-      ../../features/plasma6.nix
-
-
-    # modules - should be moved to home?
-    ../../users.nix
-
+      # modules 
+      ../../../modules/sound.nix
+      ../../../modules/locale_tz.nix
+      ../../../modules/sddm.nix
+      ../../../modules/plasma6.nix
+      ../../../modules/users.nix
 
     ];
+
   # nixpkgs.config.allowBroken = true; # BAD IDEA!
 
   # BOOT LOADER + KERNEL PARAMS
