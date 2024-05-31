@@ -15,6 +15,15 @@ let
     tableone
     data_table
     HDF5Array
+    ggvenn
+    ggpubr
+    limma
+    KEGGREST
+    S4Vectors
+    GEOquery
+    mogene10sttranscriptcluster_db
+    mogene11sttranscriptcluster_db
+
   ];
 
   R-with-my-packages = rWrapper.override {

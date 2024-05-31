@@ -151,8 +151,8 @@ home.packages =  with pkgs; [
   # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
-    userName = "Ole Hartvig Mortensen";
-    userEmail = "ole@hartvig.org";
+    userName = "givtrah";
+    userEmail = "givtrah@givtrah.org";
   };
 
   # starship - an customizable prompt for any shell

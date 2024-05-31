@@ -18,6 +18,7 @@
     LC_TIME = "da_DK.UTF-8";
   };
 
+  # Configure console keymap
   console.keyMap = "dk-latin1";
 
   # Configure keymap in X11 
