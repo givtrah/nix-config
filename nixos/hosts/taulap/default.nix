@@ -36,23 +36,11 @@
   # fix problems with two fingers needed for cursor movement
   boot.kernelParams = [ "psmouse.synaptics_intertouch=0" ];
 
-  # increase watchable files (to stop dropbox from blinking...)
-  boot.kernel.sysctl = { "fs.inotify.max_user_watches" = "1048576"; };
-
   networking.hostName = "taulap"; # Define your hostname.
 
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
-  # fix non-nix programs not working (taken from https://nix.dev/guides/faq.html) 
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # Add any missing dynamic libraries for unpackaged programs
-    # here, NOT in environment.systemPackages
-    # consider using "steam-run" to run non-nix programs
-  ]; 
-
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

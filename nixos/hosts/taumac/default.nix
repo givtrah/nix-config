@@ -10,6 +10,8 @@
 #      inputs.apple-silicon.nixosModules.apple-silicon-support
 
       # modules 
+
+      ../../../modules/common.nix
       ../../../modules/sound.nix
       ../../../modules/locale_tz.nix
       ../../../modules/sddm.nix
@@ -38,7 +40,6 @@
   hardware.asahi.setupAsahiSound = true;
 
 
-
   # Enable zram
   zramSwap = {
     enable = true;
@@ -60,15 +61,6 @@
 
   # Use latest kernel - already defined in apple-silicon-support
   # boot.kernelPackages = pkgs.linuxPackages_latest;
-
-
-
-  # enable flakes + command and allow unfree packages
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
-  
-  services.flatpak.enable = true;
-
 
   # Define hostname
   networking.hostName = "taumac"; 
@@ -98,24 +90,10 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    git # MUST be first as everything else (in flakes) depends on git
-    gh
-    wget
-    vim # Nano is horrible, install vim systemwide - notice that neovim will be installed separately...
-  ];
-
-  environment.variables.EDITOR = "vim";  # systemwide default editor, screw nano
-
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
-  # Tailscale
-  services.tailscale.enable = true;
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
