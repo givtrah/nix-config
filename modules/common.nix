@@ -76,17 +76,6 @@
     };
   };
 
- # fix non-nix programs not working (taken from https://nix.dev/guides/faq.html) 
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # Add any missing dynamic libraries for unpackaged programs
-    # here, NOT in environment.systemPackages
-    # consider using "steam-run" to run non-nix programs
-  
-  ]; 
-
-
-
 
 
   # Packages ALL systems should ALWAYS have installed, to be used for ALL users (users + root)
