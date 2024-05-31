@@ -17,6 +17,28 @@
   # Enable experimental nix commands and flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+
+  # allowed users (allowed to interact with nix daemon, this may be the default setting)
+  nix.settings.allowed-users = [ "*" ];
+
+  # Enable periodic scrub on btrfs (default once per month) as well as periodic trim (default once per week)
+
+  services.btrfs.autoScrub.enable = true;
+  services.fstrim.enable = true;
+
+
+  # Enable tailscale
+  services.tailscale.enable = true;
+
+
+
+
+
+
+
+
+
+
   # Fix missing window decorations and terrible icon themes for gnome programs outside of gnome
   # also needs package gnome.adwaita-icon-theme
 
@@ -35,6 +57,29 @@
   };
 
 
+  # Setup xdg desktop portals (assuming default install is KDE?!?!? or? fix me)
+
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gtk
+      ];
+    };
+  };
+
+ # fix non-nix programs not working (taken from https://nix.dev/guides/faq.html) 
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
+    # consider using "steam-run" to run non-nix programs
+  
+  ]; 
+
+
+
 
 
   # Packages ALL systems should ALWAYS have installed, to be used for ALL users (users + root)
@@ -48,7 +93,7 @@
   neovim
   vim
 
-
+  tailscale
 
 
 

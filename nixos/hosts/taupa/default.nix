@@ -72,109 +72,22 @@
 #              ];
 
 
-  # Enable periodic scrub on btrfs (default once per month) as well as periodic trim (default once per week)
-
-  services.btrfs.autoScrub.enable = true;
-  services.fstrim.enable = true;
-
   networking.hostName = "taupa"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
-  # tailscale
-  services.tailscale.enable = true;
   
-  # fix non-nix programs not working (taken from https://nix.dev/guides/faq.html) 
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # Add any missing dynamic libraries for unpackaged programs
-    # here, NOT in environment.systemPackages
-    # consider using "steam-run" to run non-nix programs
-  ]; 
-
-
-
-  # Enable qtile
-#  services.xserver.windowManager.qtile.enable = true;
-
-  # Enable hyprland
-
   # Enable CUPS, ipp-usb and avahi to print documents (CUPS may not be necessary!).
-
-
   services.printing.enable = true;
   services.ipp-usb.enable = true;
   services.avahi.enable = true;
 
-  xdg = {
-    portal = {
-      enable = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-wlr
-        xdg-desktop-portal-gtk
-      ];
-    };
-  };
-
-
-
-  # flatpak enable
-  services.flatpak.enable = true;
-
-  # allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-
-
-  # OPENGL
-
-  hardware.opengl.enable = true;
-
-  # Fix missing window decorations and terrible icon themes for gnome programs outside of gnome
-  # also needs package gnome.adwaita-icon-theme
-
-  programs.dconf.enable = true;
-
-
-
-  # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # allowed users (allowed to interact with nix daemon, this may be the default setting)
-  nix.settings.allowed-users = [ "*" ];
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Make bash default shell for all
-  users.defaultUserShell = pkgs.bash;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs;
-
-  [
-  git # git must be first when using flakes as it clones its dependencies using git
-  gh
-  wget
-  vim
-  neovim
-  tailscale
-  ];
-
-
-  # firefox
-
- environment.variables.EDITOR = "nvim"; # default editor is neovim
-
-  programs.bash.shellAliases = {
-    vi = "nvim"; # the one editor!
-    sudo="sudo "; # fix aliases not working using sudo - the space means carry over aliases
-  };
-
-
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
