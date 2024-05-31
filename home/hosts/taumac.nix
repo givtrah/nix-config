@@ -7,7 +7,7 @@
 
   imports = [
 
-  ../features/r.nix
+  ../features/r-only.nix
 #  ../features/rstudio.nix
 
   ../common.nix

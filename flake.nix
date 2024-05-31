@@ -55,7 +55,7 @@
       # Macbook Air M2 (16 GB / 512 GB) - Nix OS unstable
       taumac = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
-        specialArgs = { inherit inputs; inherit nixpkgs; inherit home-manager; inherit apple-silicon; inherit nixos-cosmic;};
+        specialArgs = { inherit inputs; inherit nixpkgs; inherit home-manager; inherit apple-silicon; inherit nixos-cosmic; };
         modules = [
 
           ./nixos/hosts/taumac

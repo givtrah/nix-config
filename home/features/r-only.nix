@@ -37,7 +37,7 @@ in
 
 [
   R-with-my-packages
-  RStudio-with-my-packages
+# Rstudio currently broken on aarch64
 ];
 
 
