@@ -33,13 +33,20 @@ let
   RStudio-with-my-packages = rstudioWrapper.override {
     packages = myRPackages;
   };
-in
 
-[
-  R-with-my-packages
-  RStudio-with-my-packages
-];
+  in
 
+  # Conditionally include RStudio-with-my-packages based on the architecture
+
+
+  [ R-with-my-packages ] ++
+   
+    (if (pkgs.system == "aarch64-linux")
+    then [ ]
+  else
+    (if (pkgs.system == "x86_64-linux")
+      then [ RStudio-with-my-packages ]
+      else []));
 
 
 }
