@@ -85,4 +85,45 @@ sudo nix flake update
 
 ```
 
+# Reinstall notes
+"Burn" KDE Nix OS iso to USB
+
+Boot Nix OS, TURN OFF screen lock / sleep!
+
+Use disko quickguide
+
+Remember to check lsblk
+
+Enter root password at the end, then reboot
+
+Upon reboot:
+
+Login as root
+
+nix-shell -p git
+
+git clone repo
+
+export TMPDIR=/tmp
+(or you WILL run out of space during installation).
+
+CHANGE THE STATE VERSION IN THE GIT REPO nix-config/nixos/hosts/*/default.nix to MATCH /etc/nixos/configuration.nix!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Add experimental flake and nix settings to configuration.nix in /etc/nixos/configuration.nix by adding the line
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+Then run
+nixos-rebuild switch
+
+Finally do (while standing in the nix-config dir)
+
+nixos-rebuild switch --flake ./#HOSTNAME-WANTED --impure
+
+
+ 
+
+
+
+
+
 
