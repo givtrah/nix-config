@@ -203,6 +203,9 @@ jellyfin-media-player
   google-chrome
   librewolf
 
+  # Multimedia
+  mpv
+  vlc
   # Network
   
 # in systemconf  tailscale # FW passthrough
