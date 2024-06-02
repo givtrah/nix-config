@@ -21,7 +21,13 @@
   ../features/r.nix
   ../features/office.nix
   ../common.nix
-  
+
+  ../features/browsers.nix
+  ../features/cli-tools.nix
+  ../features/fonts.nix
+
+  ../features/desktop.nix
+  ../features/qemu.nix
   ];
 
 
@@ -60,174 +66,7 @@
 
   # Packages that should be installed to the user profile.
 home.packages =  with pkgs; [
-    # here is some command line tools I use frequently
-    # feel free to add your own or remove some of them
     
-
-#    steam-run
-
-    neofetch
-    nnn # terminal file manager
-
-    # archives
-    zip
-    xz
-    unzip
-    p7zip
-
-    # utils
-    ripgrep # recursively searches directories for a regex pattern
-    jq # A lightweight and flexible command-line JSON processor
-    yq-go # yaml processor https://github.com/mikefarah/yq
-#    eza # A modern replacement for ‘ls’
-    fzf # A command-line fuzzy finder
-
-    # networking tools
-    mtr # A network diagnostic tool
-    iperf3
-    dnsutils  # `dig` + `nslookup`
-    ldns # replacement of `dig`, it provide the command `drill`
-    aria2 # A lightweight multi-protocol & multi-source command-line download utility
-    socat # replacement of openbsd-netcat
-    nmap # A utility for network discovery and security auditing
-    ipcalc  # it is a calculator for the IPv4/v6 addresses
-
-    # misc
-    cowsay
-    file
-    which
-#    tree
-    gnused
-    gnutar
-    gawk
-    zstd
-    gnupg
-
-    # nix related
-    #
-    # it provides the command `nom` works just like `nix`
-    # with more details log output
-    nix-output-monitor
-
-    # productivity
-    hugo # static site generator
-    glow # markdown previewer in terminal
-
-#    btop  # replacement of htop/nmon
-    iotop # io monitoring
-    iftop # network monitoring
-
-    # system call monitoring
-    strace # system call monitoring
-    ltrace # library call monitoring
-    lsof # list open files
-
-    # system tools
-    sysstat
-    lm_sensors # for `sensors` command
-    ethtool
-    pciutils # lspci
-    usbutils # lsusb
-
-    # from old configuration.nix (now default.nix)
-
-    firefox
-    chromium
-
-
-    kdePackages.kcalc
-    
-    mesa-demos
-    kitty
-#    btop
-#    maestral
-#     maestral-gui
-
-    dropbox
-    gh
-    neovim
-    armcord
-    neofetch
-    fastfetch
-
-#   zotero - no zotero in unstable for aarch64, only in 23.11, find out how to fix this!
-
-
-
-jellyfin-media-player
-# in system conf  neovim # editor of choice
-  mesa-demos # includes everything in glxinfo
-  zotero
-  zoom-us
-  microsoft-edge
-  teams-for-linux
-  google-chrome
-  google-fonts
-  corefonts
-  vistafonts
-  vulkan-tools
-  gnome.adwaita-icon-theme
-  btop
-  steam-run 
-  tmux
-  v4l-utils
-  guvcview
-  usbutils
-  nerdfonts
-
-  inkscape
-
-  smartmontools
-  gsmartcontrol
-  # productivity / work
-  kitty
-  kitty-themes
-  kitty-img
-  starship
-  pywal
-
-  zettlr
-  remmina
-  nomachine-client
-#  libsForQt5.kcalc
-#  libsForQt5.kate
-
-  # browsers
-  (wrapFirefox (firefox-unwrapped.override { pipewireSupport = true;}) {} ) # add pipewire support to firefox, needed for screen sharing under wayland
-  microsoft-edge
-  google-chrome
-  librewolf
-
-  # Multimedia
-  mpv
-  vlc
-  # Network
-  
-# in systemconf  tailscale # FW passthrough
-  autossh # FW passthrough
-
-
-  # System tools
-  dmidecode # for hardware information
-  inxi # for hardware information
-  lm_sensors # temps
-
-
-  # for printing
-  libusb1
-
-  #
-  virtiofsd
-
-  pciutils # for lspci
-  OVMF # for qemu secure boot emulation
-  looking-glass-client # for windows VM
-  swtpm
-  sunshine # remote desktop server (moonshine is client)
-  moonlight-qt # remote desktop client
-
-
-
 
 
 
@@ -266,7 +105,5 @@ jellyfin-media-player
       selection.save_to_clipboard = true;
     };
   };
-
-
 
 }

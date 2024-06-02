@@ -59,12 +59,11 @@
   users.defaultUserShell = pkgs.bash;
 
 programs.bash = {
-    enable = true;
     enableCompletion = true;
     # TODO add your custom bashrc here
-    bashrcExtra = ''
-      export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
-    '';
+#    bashrcExtra = ''
+#      export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
+#    ''; - ONLY WORKS IN HOME-MANAGER
 
     # set some default aliases
     shellAliases = {
@@ -100,7 +99,7 @@ programs.bash = {
 
   tailscale
 
-
+  qutebrowser # backup browser just in case!
 
 
   gnome.adwaita-icon-theme # for dconf enable above, fix gnome window decorations
