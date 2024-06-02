@@ -6,18 +6,16 @@
 
     kdePackages.kcalc
     
-    dropbox
     armcord
 
 
   jellyfin-media-player
   mesa-demos # includes everything in glxinfo
-  zotero
-  zoom-us
-  teams-for-linux
+#  zoom-us
+#  teams-for-linux
   vulkan-tools
   gnome.adwaita-icon-theme
-  steam-run 
+#  steam-run 
   v4l-utils
   guvcview
   nerdfonts
@@ -32,9 +30,9 @@
   starship
   pywal
 
-  zettlr
+#  zettlr
   remmina
-  nomachine-client
+#  nomachine-client
 #  libsForQt5.kcalc
 #  libsForQt5.kate
 
@@ -44,7 +42,17 @@
   vlc
 
 
-  ];
+  ]
+
+ ++
+  # packages not available on aarch64 goes here 
+    (if (pkgs.system == "aarch64-linux")
+    then [ ]
+  else
+    (if (pkgs.system == "x86_64-linux")
+      then [ dropbox zotero teams-for-linux zoom-us steam-run nomachine-client zettlr ]
+      else []));
+
 
 
 }
