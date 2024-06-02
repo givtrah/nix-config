@@ -58,11 +58,20 @@
   # Make BASH the default user shell
   users.defaultUserShell = pkgs.bash;
 
-  programs.bash.shellAliases = {
-    vi = "nvim"; # the one editor!
-    sudo="sudo "; # fix aliases not working using sudo - the space means carry over aliases
-  };
+programs.bash = {
+    enable = true;
+    enableCompletion = true;
+    # TODO add your custom bashrc here
+    bashrcExtra = ''
+      export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
+    '';
 
+    # set some default aliases
+    shellAliases = {
+      vi = "nvim"; # the one editor!
+      sudo="sudo "; # fix aliases not working using sudo - the space means carry over aliases
+    };
+  };
 
   # Setup xdg desktop portals (assuming default install is KDE?!?!? or? fix me)
 

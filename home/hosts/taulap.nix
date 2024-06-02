@@ -19,9 +19,9 @@
   imports = [
 
   ../features/r.nix
-#  ../features/rstudio.nix
-
+  ../features/office.nix
   ../common.nix
+  
   ];
 
 
@@ -144,10 +144,6 @@ home.packages =  with pkgs; [
 #     maestral-gui
 
     dropbox
-    libreoffice-qt
-    hunspell
-    hunspellDicts.da_DK
-    hunspellDicts.en_US
     gh
     neovim
     armcord
@@ -190,7 +186,6 @@ jellyfin-media-player
   starship
   pywal
 
-  pdfsam-basic
   zettlr
   remmina
   nomachine-client
@@ -238,12 +233,12 @@ jellyfin-media-player
 
   ];
 
-  # basic configuration of git, please change to your own
-  programs.git = {
-    enable = true;
-    userName = "givtrah";
-    userEmail = "givtrah@givtrah.org";
-  };
+#  # basic configuration of git, please change to your own
+#  programs.git = {
+#    enable = true;
+#    userName = "givtrah";
+#    userEmail = "givtrah@givtrah.org";
+#  };
 
   # starship - an customizable prompt for any shell
   programs.starship = {
@@ -272,21 +267,6 @@ jellyfin-media-player
     };
   };
 
-  programs.bash = {
-    enable = true;
-    enableCompletion = true;
-    # TODO add your custom bashrc here
-    bashrcExtra = ''
-      export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
-    '';
-
-    # set some aliases, feel free to add more or remove some
-    shellAliases = {
-      k = "kubectl";
-      urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
-      urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
-    };
-  };
 
 
 }

@@ -3,17 +3,10 @@
   home.packages = with pkgs; 
 
   [
-  git # git must be first when using flakes as it clones its dependencies using git
-  curl
-  wget
   jellyfin-media-player
   neovim # editor of choice
 #  dropbox - beware, only maestral works on aarch64
   mesa-demos # includes everything in glxinfo
-  libreoffice-qt
-  hunspell
-  hunspellDicts.da_DK
-  hunspellDicts.en_US
   # zotero
   # zoom-us
   # microsoft-edge
@@ -40,7 +33,6 @@
   starship
   pywal
 
-  pdfsam-basic
 #  zettlr
   remmina
 #  nomachine-client
