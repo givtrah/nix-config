@@ -64,6 +64,7 @@
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
             home-manager.users.ohm = import ./home/hosts/taumac.nix;
 	    home-manager.extraSpecialArgs = {inherit inputs; inherit nixpkgs; inherit nixos-cosmic; };
           }
@@ -80,6 +81,7 @@
 	  home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
             home-manager.users.ohm = import ./home/hosts/taupa.nix;
 	    home-manager.extraSpecialArgs = {inherit inputs; inherit nixpkgs; };
 	  }
@@ -95,6 +97,7 @@
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
             home-manager.users.ohm = import ./home/hosts/taulap.nix;
             home-manager.extraSpecialArgs = {inherit inputs; inherit nixpkgs; };
           }
