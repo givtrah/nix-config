@@ -18,9 +18,10 @@
 
   imports = [
 
+  ../common.nix
+
   ../features/r.nix
   ../features/office.nix
-  ../common.nix
 
   ../features/browsers.nix
   ../features/cli-tools.nix
@@ -28,8 +29,10 @@
 
   ../features/desktop.nix
   ../features/qemu.nix
-  ];
 
+  ../features/term.nix
+
+  ];
 
   
   # link the configuration file in current directory to the specified location in home directory
@@ -53,57 +56,12 @@
 #    "Xft.dpi" = 172;
 #  };
 
-  # STABLE PACKAGES
-#  home.packages = (with pkgs-stable; [
-#    zotero
-#    btop
-#    eza
-#
-#
-#  ])
-
-#  ++
 
   # Packages that should be installed to the user profile.
 home.packages =  with pkgs; [
     
-
-
-
   ];
 
-#  # basic configuration of git, please change to your own
-#  programs.git = {
-#    enable = true;
-#    userName = "givtrah";
-#    userEmail = "givtrah@givtrah.org";
-#  };
 
-  # starship - an customizable prompt for any shell
-  programs.starship = {
-    enable = true;
-    # custom settings
-    settings = {
-      add_newline = false;
-      aws.disabled = true;
-      gcloud.disabled = true;
-      line_break.disabled = true;
-    };
-  };
-
-  # alacritty - a cross-platform, GPU-accelerated terminal emulator
-  programs.alacritty = {
-    enable = true;
-    # custom settings
-    settings = {
-      env.TERM = "xterm-256color";
-      font = {
-        size = 12;
-        draw_bold_text_with_bright_colors = true;
-      };
-      scrolling.multiplier = 5;
-      selection.save_to_clipboard = true;
-    };
-  };
 
 }
