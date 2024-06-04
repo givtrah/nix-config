@@ -32,6 +32,8 @@
 
   ../features/term.nix
 
+  ../features/swayfx.nix
+
   ];
 
   
