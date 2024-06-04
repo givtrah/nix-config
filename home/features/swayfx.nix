@@ -4,7 +4,6 @@
   [
     swaybg
     waybar
-    make
     autotiling
     wayshot
     brightnessctl
@@ -20,6 +19,7 @@
   services.swayosd.enable = true;
   wayland.windowManager.sway = {
     enable = true;
+    checkConfig = false; # temp fix for can not create GLES2 renderer bug (https://github.com/nix-community/home-manager/issues/5379)
     package = pkgs.swayfx;
     wrapperFeatures.gtk = true;
     wrapperFeatures.base = true;
@@ -153,9 +153,9 @@
       blur_radius 7
       blur_passes 4
     '';
-    };
   };
 }
+
 
 
 
