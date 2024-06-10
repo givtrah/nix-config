@@ -109,6 +109,16 @@ programs.bash = {
   cmake
 
 
+  # needed systemwide packages for neovim kickstart
+  gnumake
+  unzip
+  gcc
+  gcc14
+  ripgrep
+  fd
+
+
+
 
   ];
 

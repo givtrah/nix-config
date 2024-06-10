@@ -2,11 +2,23 @@
 
   home.packages = with pkgs; 
 
+# Found rev for version 1.3.0 by doing git ls-remote https://github.com/jalvesaq/colorout
 
+let 
+  colorout = pkgs.rPackages.buildRPackage {
+    name = "colorout";
+    src = pkgs.fetchFromGitHub {
+      owner = "jalvesaq";
+      repo = "colorout";
+      rev = "838488283bbc0dbbce0a716db48b90b1ac6ff857";
+      sha256 = "j18mKqcIMS9ph9uJquweEMGJhmp5lsw7jko9nszBcUA=";
+    };
+  };
 
-let
+# let
   # Define your desired packages here
   myRPackages = with rPackages; [
+    colorout
     tidyverse
     pastecs
     jtools
