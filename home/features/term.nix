@@ -9,6 +9,16 @@
   ];
 
 
+# https://github.com/malob/nixpkgs/blob/0ba8facf583289f922ddb59ef1ea1f4b8e9f5059/home/kitty.nix
+# https://github.com/LamprosPitsillos/nixos-config/tree/main/home-manager/programs/terminal
+# https://rycee.gitlab.io/home-manager/options.xhtml#opt-programs.kitty.enable
+# https://sw.kovidgoyal.net/kitty/shell-integration/
+
+
+
+
+
+
   programs.kitty = let font_family = "JetBrainsMono NF"; in {
     enable = true;
     font = {

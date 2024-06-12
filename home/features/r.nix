@@ -2,6 +2,10 @@
 
   home.packages = with pkgs; 
 
+# https://discourse.nixos.org/t/is-there-a-way-to-add-r-packages-straight-from-github/17871
+# https://rgoswami.me/posts/nix-r-devtools/
+
+
 # Found rev for version 1.3.0 by doing git ls-remote https://github.com/jalvesaq/colorout
 
 let 
