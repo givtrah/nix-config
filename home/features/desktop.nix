@@ -7,7 +7,7 @@
     kdePackages.kcalc
     
     armcord
-
+    calibre
   obsidian
   jellyfin-media-player
   mesa-demos # includes everything in glxinfo
