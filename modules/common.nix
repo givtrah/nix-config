@@ -12,7 +12,7 @@
   services.flatpak.enable = true;
   
   # Enable OpenGL
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   # Enable experimental nix commands and flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -59,7 +59,7 @@
   users.defaultUserShell = pkgs.bash;
 
 programs.bash = {
-    enableCompletion = true;
+    completion.enable = true;
     # TODO add your custom bashrc here
 #    bashrcExtra = ''
 #      export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
