@@ -57,7 +57,7 @@
 
   # mount additional drives (that I created myself)
    fileSystems."/mnt/vm" = {
-   device = "/dev/disk/by-uuid/3a3992dd-78d2-4991-bb4d-dee2d36831bf";
+   device = "/dev/disk/by-uuid/a6928e70-7552-4a8b-83cc-2834259c3e35";
    fsType = "btrfs";
    options = [ # If you don't have this options attribute, it'll default to "defaults" 
      # boot options for fstab. Search up fstab mount options you can use
