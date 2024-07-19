@@ -3,7 +3,7 @@
   home.packages = with pkgs; 
 
   [
-
+    telegram-desktop
     kdePackages.kcalc
     
     armcord
