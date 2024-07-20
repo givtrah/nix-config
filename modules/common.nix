@@ -102,7 +102,7 @@ programs.bash = {
   qutebrowser # backup browser just in case!
 
 
-  gnome.adwaita-icon-theme # for dconf enable above, fix gnome window decorations
+  adwaita-icon-theme # for dconf enable above, fix gnome window decorations
 
 
 

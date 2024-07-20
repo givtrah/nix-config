@@ -14,7 +14,7 @@
 #  zoom-us
 #  teams-for-linux
   vulkan-tools
-  gnome.adwaita-icon-theme
+  adwaita-icon-theme
 #  steam-run 
   v4l-utils
   guvcview

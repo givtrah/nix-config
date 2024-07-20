@@ -17,6 +17,7 @@
       ../../../modules/sddm.nix
       ../../../modules/plasma6.nix
       ../../../modules/users.nix
+#      ../../../modules/cosmic.nix
 
     ];
 
