@@ -4,54 +4,51 @@
 
   [
   # Emulation
+  
+  retroarchFull # multi system with all cores (should be changed to NOT mame, but everything else)
 
-  rpcs3 # PS3
-  dosbox # Dos games
-  cemu # Wii
-  xemu # original xbox 
-  pcsxr # PS1
-  lime3ds # Nintendo 3DS
-  dgen-sdl # Sega Genesis / Megadrive
-  desmume # Nintendo DS
-  stella # Atari 2600
-  openmsx # MSX
-  melonDS # Nintendo DS
-  mgba # Nintendo Gameboy Advance
-  fsuae # Amiga
-  uae # Amiga
   mednafen # multisystem emulator
   mednaffe # frontend for mednafen
-  sameboy # Gameboy, Gameboy color, Super Gameboy
-  zsnes # Super Nintendo 
-  fceux # NES
-  vice # C-64
-  ryujinx # Switch
-  nanoboyadvance # Nintendo Gameboy Advance
 
-  dolphin-emu # Gamecube / Wii / trifoce
+  desmume # Nintendo DS
+  melonDS # Nintendo DS
+  lime3ds # Nintendo 3DS
+  mgba # Nintendo Gameboy Advance
+  sameboy # Nintendo Gameboy, Gameboy color, Super Gameboy
+  fceux # NES
+  punes-qt6 # NES
+  snes9x-gtk # SNES
+  nanoboyadvance # Nintendo Gameboy Advance
+  dolphin-emu # Nintendo Gamecube / Wii / triforce
+  ryujinx # Nintendo Switch
 
   duckstation # PS1
-
+  pcsxr # PS1
   ppsspp-sdl-wayland # Playstation portable (wayland)
-
-  flycast # Sega Dreamcast, Naomi and Atomiswave emulator
-  snes9x-gtk # SNES
-  punes-qt6 # NES
-
-  retroarchFull # multi system with all cores
-
-  emulationstation # Frontend
-
+  rpcs3 # PS3
+  
   maxcso # compression from iso to cso for psp and ps2 emus
+ 
+  dosbox # Dos games
+ 
+  xemu # original xbox 
+ 
+  dgen-sdl # Sega Genesis / Megadrive
+  flycast # Sega Dreamcast, Naomi and Atomiswave emulator
 
-  heroic
-  gogdl
+  stella # Atari 2600
+  openmsx # MSX
+#  fsuae # Amiga, not working right now
+  uae # Amiga
+  vice # C-64
+
+#  emulationstation # Frontend currently with security issues
 
 
+  heroic # heroic launcher
+  gogdl # gog downloader for heroic
 
   ]
-
-
 
   ++
    
@@ -63,7 +60,8 @@
 
         mupen64plus # Nintendo 64
         pcsx2 # PS2
-
+        cemu # Wii x86 only
+        zsnes # SNES x86 only
       ]
       else []));
 
