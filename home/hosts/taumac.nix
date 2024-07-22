@@ -21,6 +21,8 @@
 
   ../features/term.nix
 
+  ../features/gaming.nix
+
   ];
 
 

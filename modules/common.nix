@@ -104,7 +104,7 @@ programs.bash = {
 
   adwaita-icon-theme # for dconf enable above, fix gnome window decorations
 
-
+  wireguard-tools
 
   cmake
 

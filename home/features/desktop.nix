@@ -3,6 +3,10 @@
   home.packages = with pkgs; 
 
   [
+ 
+    
+    qbittorrent-qt5
+
     telegram-desktop
     kdePackages.kcalc
     
