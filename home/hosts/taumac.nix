@@ -23,6 +23,9 @@
 
   ../features/gaming.nix
 
+
+  ../features/dev.nix
+
   ];
 
 

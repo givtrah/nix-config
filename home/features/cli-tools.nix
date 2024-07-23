@@ -3,9 +3,6 @@
   home.packages = with pkgs; 
 
   [
-
-
-
     neofetch
     nnn # terminal file manager
 
@@ -72,7 +69,7 @@
 
 
 #    maestral
-#     maestral-gui
+#    maestral-gui
 
     fastfetch
 

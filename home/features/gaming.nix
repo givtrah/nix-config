@@ -48,6 +48,8 @@
   heroic # heroic launcher
   gogdl # gog downloader for heroic
 
+  scummvm
+
   ]
 
   ++
