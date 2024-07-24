@@ -84,8 +84,6 @@ programs.bash = {
     };
   };
 
-
-
   # Packages ALL systems should ALWAYS have installed, to be used for ALL users (users + root)
 
   environment.systemPackages = with pkgs; [
@@ -116,9 +114,6 @@ programs.bash = {
   gcc14
   ripgrep
   fd
-
-
-
 
   ];
 
