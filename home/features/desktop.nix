@@ -54,7 +54,7 @@
     then [ ]
   else
     (if (pkgs.system == "x86_64-linux")
-      then [ dropbox zotero teams-for-linux zoom-us steam-run nomachine-client zettlr ]
+      then [ dropbox zotero teams-for-linux zoom-us steam-run zettlr ]
       else []));
 
 

@@ -1,8 +1,9 @@
 {
   disko.devices = {
-    disk.nvme = {
+    disk = {
+      disk1 = {
       type = "disk";
-      device = "/dev/nvme0n1";
+      device = "/dev/nvme3n1";
       content = {
         type = "gpt";
         partitions = {
@@ -17,13 +18,13 @@
             };
           };
           swap = {
-            size = "32G";
+            size = "64G";
             content = {
               type = "swap";
               };
             };
           root = {
-            size = "200G";
+            size = "512G";
             content = {
               type = "btrfs";
               extraArgs = [ "-f" ]; # Override existing partition, probably means format it
@@ -43,21 +44,39 @@
                 };
               };
             };
-           luks = {
+           vms = {
              size = "100%";
              content = {
-               type = "luks";
-               name = "crypted";
-               extraOpenArgs = [ "--allow-discards" ];
-               content = {
-                 type = "btrfs";
-                 extraArgs = [ "-f" ];
-                 
-                 subvolumes = {
-                   "/home" = {
-                     mountpoint = "/home";
-                     mountOptions = [ "compress=lzo" "noatime" ];
-                     };
+               type = "filesystem";
+               format = "ext4";
+               mountpoint = "/mnt/vm";
+               };
+             };
+           };
+         };
+       };
+    disk2 = {
+      type = "disk";
+      device = "/dev/nvme1n1";
+      content = {
+        type = "gpt";
+        partitions = {
+          luks = {
+            size = "100%";
+              content = {
+                type = "luks";
+                name = "crypted";
+                extraOpenArgs = [ "--allow-discards" ];
+                content = {
+                  type = "btrfs";
+                  extraArgs = [ "-f" ];
+
+                  subvolumes = {
+                    "/home" = {
+                      mountpoint = "/home";
+                      mountOptions = [ "compress=lzo" "noatime" ];
+                      };
+                    };
                   };
                 };
               };

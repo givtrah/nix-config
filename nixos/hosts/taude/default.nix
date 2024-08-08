@@ -41,7 +41,7 @@
   # early modules
   boot.initrd.kernelModules = [ "vfio" "vfio_pci" "vfio_iommu_type1" ];
   # passthrough 2060 super
-  boot.extraModprobeConfig ="options vfio-pci ids=10de:1f06,10de:10f9,10de:1ada,10de:1adb";
+#  boot.extraModprobeConfig ="options vfio-pci ids=10de:1f06,10de:10f9,10de:1ada,10de:1adb";
   # Enable KVM
   boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
   
@@ -56,25 +56,13 @@
 
 
   # mount additional drives (that I created myself)
-   fileSystems."/mnt/vm" = {
-   device = "/dev/disk/by-uuid/a6928e70-7552-4a8b-83cc-2834259c3e35";
-   fsType = "btrfs";
-   options = [ # If you don't have this options attribute, it'll default to "defaults" 
-     # boot options for fstab. Search up fstab mount options you can use
-     "noatime" # performance 
-     "compress=zstd:3" # best performance from normal ssd
-     "users" # Allows any user to mount and unmount
-     "nofail" # Prevent system from failing if this drive doesn't mount
-   ];
- };
-
 
 # nixpkgs.config.permittedInsecurePackages = [
 #               # "mailspring-1.12.0"
 #              ];
 
 
-  networking.hostName = "taupa"; # Define your hostname.
+  networking.hostName = "taude"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
@@ -149,7 +137,7 @@
   # and migrated your data accordingly.
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "24.05"; # Did you read the comment?
 
 }
 
