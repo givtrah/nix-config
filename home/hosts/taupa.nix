@@ -17,7 +17,8 @@
   programs.home-manager.enable = true;
 
   imports = [
-
+#  inputs.nix-flatpak.homeManagerModules.nix-flatpak	  
+  
   ../common.nix
 
   ../features/r.nix

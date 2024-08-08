@@ -29,6 +29,13 @@
       url = "github:lilyinstarlight/nixos-cosmic";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak/?";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+
   };
 
   
@@ -37,7 +44,8 @@
     nixpkgs, 
     home-manager, 
     apple-silicon,
-    nixos-cosmic, 
+    nixos-cosmic,
+    nix-flatpak,
     ... 
     
     }: 
@@ -77,7 +85,6 @@
 	specialArgs = { inherit inputs; inherit nixpkgs; inherit home-manager;};
 	modules = [
 	  ./nixos/hosts/taupa
-	  
 	  home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -91,7 +98,7 @@
       # Main desktop @ home 7900 64 GB multi-GPU, lots of NVME / SSD
       taude = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-	specialArgs = { inherit inputs; inherit nixpkgs; inherit home-manager;};
+	specialArgs = { inherit inputs; inherit nixpkgs; inherit home-manager; inherit nix-flatpak;};
 	modules = [
 	  ./nixos/hosts/taude
 	  
@@ -99,7 +106,12 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-            home-manager.users.ohm = import ./home/hosts/taude.nix;
+            
+	    home-manager.users."ohm".imports = [ nix-flatpak.homeManagerModules.nix-flatpak 
+	      ./home/hosts/taude.nix
+	    ];
+
+#	    home-manager.users.ohm = import ./home/hosts/taude.nix;
 	    home-manager.extraSpecialArgs = {inherit inputs; inherit nixpkgs; };
 	  }
 	];

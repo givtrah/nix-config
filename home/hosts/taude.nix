@@ -17,6 +17,9 @@
   programs.home-manager.enable = true;
 
   imports = [
+ 
+  ../features/flatpak.nix
+
 
   ../common.nix
 
