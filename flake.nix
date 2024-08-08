@@ -88,6 +88,27 @@
 	];
       };
 
+      # Main desktop @ home 7900 64 GB multi-GPU, lots of NVME / SSD
+      taude = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+	specialArgs = { inherit inputs; inherit nixpkgs; inherit home-manager;};
+	modules = [
+	  ./nixos/hosts/taude
+	  
+	  home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.users.ohm = import ./home/hosts/taude.nix;
+	    home-manager.extraSpecialArgs = {inherit inputs; inherit nixpkgs; };
+	  }
+	];
+      };
+
+
+
+
+
       # Lenovo Laptop (16/2 TB) - Nix OS unstable
       taulap = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
