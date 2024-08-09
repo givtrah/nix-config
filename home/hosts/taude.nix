@@ -37,6 +37,8 @@
 
   ../features/swayfx.nix
 
+  ../features/gaming.nix
+
   ];
 
   

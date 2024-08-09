@@ -11,6 +11,8 @@
     xz
     unzip
     p7zip
+#    unrar
+    rar
 
     # utils
     ripgrep # recursively searches directories for a regex pattern

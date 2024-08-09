@@ -40,7 +40,10 @@
 
   # early modules
   boot.initrd.kernelModules = [ "vfio" "vfio_pci" "vfio_iommu_type1" ];
-  # passthrough 2060 super
+
+  # disable ethernet energy efficiency (causes link drops...)
+
+# passthrough 2060 super
 #  boot.extraModprobeConfig ="options vfio-pci ids=10de:1f06,10de:10f9,10de:1ada,10de:1adb";
   # Enable KVM
   boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
@@ -52,7 +55,8 @@
 
 
   # Enable hugepages for better (windows) VM performance
-  boot.kernelParams = ["hugepagesz=1G" "hugepages=24"]; # remember to enable in libvirt... 
+  # Disable ethernet energy efficiency (causes link drops..)
+  boot.kernelParams = ["hugepagesz=1G" "hugepages=24" "igb.EEE=0"]; # remember to enable in libvirt... 
 
 
   # mount additional drives (that I created myself)
@@ -67,6 +71,9 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
+
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   
   # Enable CUPS, ipp-usb and avahi to print documents (CUPS may not be necessary!).
   services.printing.enable = true;

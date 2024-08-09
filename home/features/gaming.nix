@@ -1,11 +1,26 @@
 { config, pkgs, ...}: {
 
+  gtk = {
+    enable = true;
+    };
+
+
+home.pointerCursor = {
+  x11.enable = true;
+  gtk.enable = true;
+  package = pkgs.catppuccin-cursors.mochaSapphire;
+  name = "catppuccin-mocha-sapphire-cursors";
+  size = 48;
+};
+
+
+
   home.packages = with pkgs; 
 
   [
   # Emulation
   
-  retroarchFull # multi system with all cores (should be changed to NOT mame, but everything else)
+#  retroarchFull # multi system with all cores (should be changed to NOT mame, but everything else)
 
   mednafen # multisystem emulator
   mednaffe # frontend for mednafen
@@ -50,6 +65,10 @@
 
   scummvm
 
+  mangohud
+
+
+
   ]
 
   ++
@@ -58,8 +77,8 @@
     then [ ]
   else
     (if (pkgs.system == "x86_64-linux")
-      then [ i
-
+      then [ 
+	steam
         mupen64plus # Nintendo 64
         pcsx2 # PS2
         cemu # Wii x86 only

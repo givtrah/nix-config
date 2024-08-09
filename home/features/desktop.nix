@@ -3,8 +3,12 @@
   home.packages = with pkgs; 
 
   [
- 
-    
+
+    amdgpu_top
+    lact
+    piper
+
+
     qbittorrent-qt5
 
     telegram-desktop
