@@ -10,6 +10,8 @@
   chromium
 
 
+  (wrapFloorp (floorp-unwrapped.override { pipewireSupport = true;}) {} ) # add pipewire support to floorp, needed for screen sharing under wayland
+  librewolf
 
   ]
 
