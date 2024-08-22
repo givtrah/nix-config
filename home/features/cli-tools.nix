@@ -11,8 +11,8 @@
     xz
     unzip
     p7zip
-#    unrar
-    rar
+    unrar
+#    rar   # does not exist on aarch64
 
     # utils
     ripgrep # recursively searches directories for a regex pattern

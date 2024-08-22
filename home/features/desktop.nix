@@ -8,6 +8,8 @@
     lact
     piper
 
+    gnome-multi-writer
+
 
     qbittorrent-qt5
 

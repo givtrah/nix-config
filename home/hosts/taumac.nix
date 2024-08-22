@@ -21,7 +21,7 @@
 
   ../features/term.nix
 
-  ../features/gaming.nix
+#  ../features/gaming.nix # duckstation and other not compiling on aarch64
 
 
   ../features/dev.nix
@@ -42,7 +42,7 @@
 
   # encode the file content in nix configuration file directly
   # home.file.".xxx".text = ''
-  #     xxx
+  #     xxx#
   # '';
 
   # set cursor size and dpi for 4k monitor
