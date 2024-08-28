@@ -66,6 +66,13 @@
         specialArgs = { inherit inputs; inherit nixpkgs; inherit home-manager; inherit apple-silicon; inherit nixos-cosmic; };
         modules = [
 
+          {
+            nix.settings = {
+              substituters = [ "https://cosmic.cachix.org/" ];
+              trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+            };
+          }
+
           ./nixos/hosts/taumac
 	  inputs.apple-silicon.nixosModules.apple-silicon-support
 
