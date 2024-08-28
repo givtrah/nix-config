@@ -76,6 +76,8 @@
           ./nixos/hosts/taumac
 	  inputs.apple-silicon.nixosModules.apple-silicon-support
 
+          nixos-cosmic.nixosModules.default
+
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
