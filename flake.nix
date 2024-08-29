@@ -107,9 +107,19 @@
       # Main desktop @ home 7900 64 GB multi-GPU, lots of NVME / SSD
       taude = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-	specialArgs = { inherit inputs; inherit nixpkgs; inherit home-manager; inherit nix-flatpak;};
+	specialArgs = { inherit inputs; inherit nixpkgs; inherit home-manager; inherit nix-flatpak; inherit nixos-cosmic;};
 	modules = [
+
+  	  {
+            nix.settings = {
+              substituters = [ "https://cosmic.cachix.org/" ];
+              trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+            };
+          }
+
 	  ./nixos/hosts/taude
+	  
+          nixos-cosmic.nixosModules.default
 	  
 	  home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
@@ -121,7 +131,7 @@
 	    ];
 
 #	    home-manager.users.ohm = import ./home/hosts/taude.nix;
-	    home-manager.extraSpecialArgs = {inherit inputs; inherit nixpkgs; };
+	    home-manager.extraSpecialArgs = {inherit inputs; inherit nixpkgs; inherit nixos-cosmic;};
 	  }
 	];
       };

@@ -19,6 +19,8 @@
       ../../../modules/sddm.nix
       ../../../modules/plasma6.nix
 
+      ../../../modules/cosmic.nix
+
       ../../../modules/sway.nix
 
     ];
