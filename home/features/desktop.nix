@@ -42,7 +42,7 @@
 
 #  zettlr
   remmina
-#  nomachine-client
+  nomachine-client
 #  libsForQt5.kcalc
 #  libsForQt5.kate
 
@@ -60,9 +60,9 @@
     then [ ]
   else
     (if (pkgs.system == "x86_64-linux")
-      then [ dropbox zotero teams-for-linux zoom-us steam-run zettlr ]
+      then [ dropbox zotero zoom-us steam-run zettlr ]
       else []));
 
-
+# teams-for-linux
 
 }

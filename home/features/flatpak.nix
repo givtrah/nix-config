@@ -17,6 +17,8 @@
     "com.usebottles.bottles"
     "org.freedesktop.Platform.VulkanLayer.MangoHud/x86_64/23.08" # CAREFUL, VERSION MIGHT BE INCOMPAT WITH BOTTLES IN THE FUTURE!
     "org.freedesktop.Platform.VulkanLayer.gamescope/x86_64/23.08"
+    "com.github.IsmaelMartinez.teams_for_linux"
+
   ];
 
 

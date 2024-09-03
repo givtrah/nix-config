@@ -91,7 +91,7 @@
       # Main desktop @ uni 5700x 64 GB multi-GPU, 2 TB nvme - Nix OS unstable
       taupa = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-	specialArgs = { inherit inputs; inherit nixpkgs; inherit home-manager;};
+	specialArgs = { inherit inputs; inherit nixpkgs; inherit home-manager; inherit nix-flatpak;};
 	modules = [
 	  ./nixos/hosts/taupa
 	  home-manager.nixosModules.home-manager {
