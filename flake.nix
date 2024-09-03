@@ -101,8 +101,8 @@
 
 	    home-manager.users."ohm".imports = [ 
 	      nix-flatpak.homeManagerModules.nix-flatpak
-	      ./home/hosts/taupa.nix;
-	      ]
+	      ./home/hosts/taupa.nix
+	      ];
 
             home-manager.extraSpecialArgs = {inherit inputs; inherit nixpkgs; };
 	  }
