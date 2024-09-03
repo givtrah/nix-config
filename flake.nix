@@ -98,8 +98,13 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-            home-manager.users.ohm = import ./home/hosts/taupa.nix;
-	    home-manager.extraSpecialArgs = {inherit inputs; inherit nixpkgs; };
+
+	    home-manager.users."ohm".imports = [ 
+	      nix-flatpak.homeManagerModules.nix-flatpak
+	      ./home/hosts/taupa.nix;
+	      ]
+
+            home-manager.extraSpecialArgs = {inherit inputs; inherit nixpkgs; };
 	  }
 	];
       };
