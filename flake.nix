@@ -56,6 +56,7 @@
         system = "aarch64-linux";
         specialArgs = { inherit inputs; inherit nixpkgs; inherit home-manager; inherit apple-silicon; inherit nixos-cosmic; };
         modules =  shared-modules ++ [
+	  ./nixos/hosts/taumac
 	  inputs.apple-silicon.nixosModules.apple-silicon-support
           home-manager.nixosModules.home-manager {
 	    home-manager.users.ohm = {
