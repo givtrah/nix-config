@@ -29,20 +29,17 @@
   outputs = { self, nixpkgs, home-manager, nix-flatpak, nixos-cosmic, apple-silicon, ... }@inputs: 
       let
         shared-modules = [
-
           {
 	    nix.settings = {
               substituters = [ "https://cosmic.cachix.org/" ]; # nixos-cosmic build repo
               trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
             };
           }
-
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
 	    home-manager.extraSpecialArgs = { inherit inputs nixpkgs nixos-cosmic; };
-
 	    home-manager.users.ohm.imports = [ 
 	     nix-flatpak.homeManagerModules.nix-flatpak
 	     ./home/common.nix
@@ -50,9 +47,7 @@
 	}
       ];
 
-     in
-    {
-
+    in {
     nixosConfigurations = {
       nixpkgs.config.allowUnfree = true;
 
@@ -61,27 +56,15 @@
         system = "aarch64-linux";
         specialArgs = { inherit inputs; inherit nixpkgs; inherit home-manager; inherit apple-silicon; inherit nixos-cosmic; };
         modules = [
-
-          {
-            nix.settings = {
-              substituters = [ "https://cosmic.cachix.org/" ];
-              trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
-            };
-          }
-
-          ./nixos/hosts/taumac
+	  shared-modules ++ [ 
 	  inputs.apple-silicon.nixosModules.apple-silicon-support
-
-          nixos-cosmic.nixosModules.default
-
           home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.users.ohm = import ./home/hosts/taumac.nix;
-	    home-manager.extraSpecialArgs = {inherit inputs; inherit nixpkgs; inherit nixos-cosmic; };
-          }
-        ]; 
+	    home-manager.users.ohm = {
+	      home.stateVersion = "24.05";
+	      imports = [ ];
+	    };
+	  }
+	]; 
       };
       
       # Main desktop @ uni 5700x 64 GB multi-GPU, 2 TB nvme - Nix OS unstable
