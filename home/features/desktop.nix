@@ -57,7 +57,7 @@
  ++
   # packages not available on aarch64 goes here 
     (if (pkgs.system == "aarch64-linux")
-    then [ ]
+    then [ maestral maestral-gui ]
   else
     (if (pkgs.system == "x86_64-linux")
       then [ dropbox zotero zoom-us steam-run zettlr ]

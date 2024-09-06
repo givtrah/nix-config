@@ -1,13 +1,39 @@
 { config, pkgs, ...}: {
 
-  # basic configuration of git, please change to your own
+  # user configuration
+  home.username = "ohm";
+  home.homeDirectory = "/home/ohm";
+
+  # Let home Manager install and manage itself.
+  programs.home-manager.enable = true;
+
+  # basic git configuration
   programs.git = {
     enable = true;
     userName = "givtrah";
     userEmail = "givtrah@givtrah.org";
   };
 
+  imports = [
+  #  inputs.nix-flatpak.homeManagerModules.nix-flatpak	 
 
+  ./features/flatpak.nix
+
+  ./features/r.nix
+  ./features/office.nix
+
+  ./features/browsers.nix
+  ./features/cli-tools.nix
+  ./features/fonts.nix
+
+  ./features/desktop.nix
+  ./features/qemu.nix
+
+  ./features/term.nix
+
+  ./features/swayfx.nix
+
+  ];
 
 #  programs.dconf.enable = true; Should be done in a module
 
@@ -18,6 +44,8 @@
     sort-directories-first = true;
   };
 
+
+# Packages that should be installed to the user profile.
   home.packages = with pkgs; 
 
   [

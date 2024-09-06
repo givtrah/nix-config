@@ -2,50 +2,64 @@
   description = "Givtrah nix config because I'm a special snowflake";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable"; # unstable nixpkgs
-    nixpkgs-yuzu.url = "github:nixos/nixpkgs/95002f7"; # yuzu (have to be tested...)
-    home-manager = { 
+   
+    # Unstable nixpkgs
+    nixpkgs.url = "nixpkgs/nixos-unstable";
+    
+    # Yuzu
+    nixpkgs-yuzu.url = "github:nixos/nixpkgs/95002f7";
+
+    # Home-manager 
+    home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     apple-silicon = {
       url = "github:tpwrules/nixos-apple-silicon";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     nixos-cosmic = {
       url = "github:lilyinstarlight/nixos-cosmic";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak/?";
 #      inputs.nixpkgs.follows = "nixpkgs";
     };
+
+
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-flatpak, nixos-cosmic, apple-silicon, ... }@inputs: 
+  
+  outputs = inputs@{ 
+    self,
+    nixpkgs, 
+    home-manager, 
+    apple-silicon,
+    nixos-cosmic,
+    nix-flatpak,
+    ... 
+    
+    }: 
+
       let
         shared-modules = [
-
-          {
-	    nix.settings = {
-              substituters = [ "https://cosmic.cachix.org/" ]; # nixos-cosmic build repo
-              trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
-            };
-          }
-
+        
           home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-	    home-manager.extraSpecialArgs = { inherit inputs nixpkgs nixos-cosmic; };
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            backupFileExtension = "backup";
 
-	    home-manager.users.ohm.imports = [ 
+	    users."ohm".imports = [ 
 	     nix-flatpak.homeManagerModules.nix-flatpak
-	     ./home/common.nix
         ];
 	}
       ];
@@ -90,12 +104,14 @@
 	specialArgs = { inherit inputs; inherit nixpkgs; inherit home-manager; inherit nix-flatpak;};
 	modules = shared-modules ++ [
 	  ./nixos/hosts/taupa
-	  home-manager.nixosModules.home-manager { 
-	    home-manager.users.ohm = {
-	      home.stateVersion = "24.05";
-	      imports = [ ]; 
-	  };
-	}
+	  home-manager.nixosModules.home-manager {
+	    home-manager.users."ohm".imports = [ 
+	      nix-flatpak.homeManagerModules.nix-flatpak
+	      ./home/hosts/taupa.nix
+	      ];
+
+            home-manager.extraSpecialArgs = {inherit inputs; inherit nixpkgs; };
+	  }
 	];
       };
 
