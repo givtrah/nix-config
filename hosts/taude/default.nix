@@ -11,17 +11,17 @@
       "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
       ./disko-config.nix
 
-      ../../../modules/common.nix
+      ../../modules/common.nix
 
-      ../../../modules/users.nix
-      ../../../modules/locale_tz.nix
-      ../../../modules/sound.nix
-      ../../../modules/sddm.nix
-      ../../../modules/plasma6.nix
+      ../../modules/users.nix
+      ../../modules/locale_tz.nix
+      ../../modules/sound.nix
+      ../../modules/sddm.nix
+      ../../modules/plasma6.nix
 
-      ../../../modules/cosmic.nix
+      ../../modules/cosmic.nix
 
-      ../../../modules/sway.nix
+      ../../modules/sway.nix
 
     ];
 

@@ -12,14 +12,14 @@
       # load disko config to setup disks
       ./disko-config.nix
 
-      ../../../modules/common.nix
+      ../../modules/common.nix
 
-      ../../../modules/users.nix
-      ../../../modules/locale_tz.nix
-      ../../../modules/sound.nix
-      ../../../modules/sddm.nix
-      ../../../modules/plasma6.nix
-      ../../../modules/flatpak.nix
+      ../../modules/users.nix
+      ../../modules/locale_tz.nix
+      ../../modules/sound.nix
+      ../../modules/sddm.nix
+      ../../modules/plasma6.nix
+      ../../modules/flatpak.nix
 
     ];
 
