@@ -6,6 +6,8 @@
     neofetch
     nnn # terminal file manager
 
+    killall
+
     # archives
     zip
     xz
