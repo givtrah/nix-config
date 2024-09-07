@@ -4,6 +4,8 @@
 
   [
 
+    amarok
+
     amdgpu_top
     lact
     piper
