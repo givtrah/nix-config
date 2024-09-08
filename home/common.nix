@@ -17,6 +17,8 @@
   imports = [
   #  inputs.nix-flatpak.homeManagerModules.nix-flatpak	 
 
+  ./features/gaming.nix
+
   ./features/flatpak.nix
 
   ./features/r.nix

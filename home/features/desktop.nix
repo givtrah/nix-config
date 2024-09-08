@@ -5,6 +5,8 @@
   [
 
     amarok
+    asunder # cd ripper
+    lame
 
     amdgpu_top
     lact

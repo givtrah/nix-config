@@ -38,7 +38,7 @@ home.pointerCursor = {
   ryujinx # Nintendo Switch
 
   duckstation # PS1
-  pcsxr # PS1
+#  pcsxr # PS1
   ppsspp-sdl-wayland # Playstation portable (wayland)
   rpcs3 # PS3
   

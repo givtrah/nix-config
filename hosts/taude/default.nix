@@ -63,6 +63,22 @@
 
   # mount additional drives (that I created myself)
 
+  fileSystems."/mnt/emu8tb" =
+    { device = "/dev/disk/by-uuid/52b69fea-5db0-429c-bb26-01f6d9d1ed1f";
+      fsType = "btrfs";
+      options = [ "compress=zstd" "noatime" "discard=async" ];
+    };
+
+  fileSystems."/mnt/emu" =
+    { device = "/dev/disk/by-uuid/81093fa1-9e80-4b4e-915d-0c67e5a08fdf";
+      fsType = "btrfs";
+      options = [ "compress=zstd" "noatime" "discard=async" ];
+    };
+
+
+
+
+
 # nixpkgs.config.permittedInsecurePackages = [
 #               # "mailspring-1.12.0"
 #              ];
