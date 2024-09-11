@@ -54,6 +54,14 @@
 
 
   environment.variables.EDITOR = "nvim"; # default editor is neovim
+  
+
+# FORCE libreoffice (non-QT!) / all GTK apps.. to use a white theme! for my sanity...
+#  environment.variables.GTK_THEME = "Adwaita"; 
+  environment.sessionVariables = {
+    GTK_THEME = "Adwaita";
+    };
+
 
   # Make BASH the default user shell
   users.defaultUserShell = pkgs.bash;
