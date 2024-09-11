@@ -11,14 +11,14 @@
 
       # modules 
 
-      ../../../modules/common.nix
-      ../../../modules/sound.nix
-      ../../../modules/locale_tz.nix
-      ../../../modules/sddm.nix
-      ../../../modules/plasma6.nix
-      ../../../modules/users.nix
-#      ../../../modules/cosmic.nix
-      ../../../modules/distrobox.nix
+      ../../modules/common.nix
+      ../../modules/sound.nix
+      ../../modules/locale_tz.nix
+      ../../modules/sddm.nix
+      ../../modules/plasma6.nix
+      ../../modules/users.nix
+#     ../../modules/cosmic.nix
+      ../../modules/distrobox.nix
     ];
 
 #  nixpkgs.config.allowBroken = true; # BAD IDEA! needed for compatibility with x86 as rstudio is currently broken on aarch64
