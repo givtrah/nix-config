@@ -60,7 +60,7 @@ home.pointerCursor = {
 #  emulationstation # Frontend currently with security issues
 
 
-  heroic # heroic launcher
+#  heroic # heroic launcher
   gogdl # gog downloader for heroic
 
   scummvm
@@ -83,6 +83,10 @@ home.pointerCursor = {
         pcsx2 # PS2
         cemu # Wii x86 only
         zsnes # SNES x86 only
+        heroic
+
+
+
       ]
       else []));
 
