@@ -76,6 +76,7 @@
 	specialArgs = specialArgs;
 	modules = shared-modules ++ [
 	  ./hosts/taupa
+	  ./modules/ntp.nix
 	  home-manager.nixosModules.home-manager { 
 	    home-manager.users.ohm = {
 	      home.stateVersion = "24.05";
