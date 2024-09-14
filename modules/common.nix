@@ -26,6 +26,10 @@
   services.btrfs.autoScrub.enable = true;
   services.fstrim.enable = true;
 
+  # Enable timesync (ntp) using default (nix) servers
+
+  services.timesyncd.enable = true;
+
 
   # Enable tailscale
   services.tailscale.enable = true;
