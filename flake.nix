@@ -41,7 +41,7 @@
 	home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.backupFileExtension = "backup";
+          home-manager.backupFileExtension = "backup2";
 	  home-manager.extraSpecialArgs = { inherit inputs nixpkgs nixos-cosmic; };
 	  home-manager.users.ohm.imports = [ 
 	    nix-flatpak.homeManagerModules.nix-flatpak
