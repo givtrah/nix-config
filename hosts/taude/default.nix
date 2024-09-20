@@ -96,7 +96,13 @@
   # Enable CUPS, ipp-usb and avahi to print documents (CUPS may not be necessary!).
   services.printing.enable = true;
   services.ipp-usb.enable = true;
-  services.avahi.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
+#  services.printing.drivers = [ pkgs.hplip ];
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
