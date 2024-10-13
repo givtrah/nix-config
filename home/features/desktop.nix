@@ -7,6 +7,8 @@
     amarok
     asunder # cd ripper
     lame
+    beets
+
 
     amdgpu_top
     lact
@@ -54,13 +56,14 @@
   mpv
   vlc
 
-
+  maestral 
+  maestral-gui
   ]
 
  ++
   # packages not available on aarch64 goes here 
     (if (pkgs.system == "aarch64-linux")
-    then [ maestral maestral-gui ]
+    then [  ]
   else
     (if (pkgs.system == "x86_64-linux")
       then [ zotero zoom-us steam-run zettlr nomachine-client ]

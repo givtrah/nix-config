@@ -1,9 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
 
 # https://nixos.wiki/wiki/Dropbox
 
-{
   environment.systemPackages = with pkgs; [
     # dropbox - we don't need this in the environment. systemd unit pulls it in
     dropbox-cli
@@ -31,6 +30,5 @@
       Nice = 10;
     };
   };
-}
 
 }

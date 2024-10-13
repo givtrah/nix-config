@@ -23,7 +23,7 @@
 
       ../../modules/sway.nix
 
-      ../../modules/dropbox.nix
+#      ../../modules/dropbox.nix
 
     ];
 
