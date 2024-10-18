@@ -109,7 +109,7 @@ programs.bash = {
 
   tailscale
 
-  qutebrowser # backup browser just in case!
+  # qutebrowser # backup browser just in case!
 
   adwaita-icon-theme # for dconf enable above, fix gnome window decorations
 

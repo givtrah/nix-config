@@ -4,7 +4,8 @@
 
   [
 
-    amarok
+#    amarok
+    clementine
     asunder # cd ripper
     lame
     beets
@@ -17,13 +18,13 @@
     gnome-multi-writer
 
 
-    qbittorrent-qt5
+    qbittorrent
 
     telegram-desktop
     kdePackages.kcalc
     
-    armcord
-    calibre
+    legcord
+#    calibre
   obsidian
   jellyfin-media-player
   mesa-demos # includes everything in glxinfo
@@ -57,7 +58,7 @@
   vlc
 
   maestral 
-  maestral-gui
+ # maestral-gui
   ]
 
  ++

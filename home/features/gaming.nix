@@ -18,6 +18,11 @@ home.pointerCursor = {
   home.packages = with pkgs; 
 
   [
+
+# remoteplay
+  moonlight-qt
+  sunshine
+
   # Emulation
   
 #  retroarchFull # multi system with all cores (should be changed to NOT mame, but everything else)
@@ -27,7 +32,7 @@ home.pointerCursor = {
 
   desmume # Nintendo DS
   melonDS # Nintendo DS
-  lime3ds # Nintendo 3DS
+#  lime3ds # Nintendo 3DS
   mgba # Nintendo Gameboy Advance
   sameboy # Nintendo Gameboy, Gameboy color, Super Gameboy
   fceux # NES
