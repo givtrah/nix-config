@@ -9,7 +9,7 @@
     asunder # cd ripper
     lame
     beets
-
+    kid3
 
     amdgpu_top
     lact
