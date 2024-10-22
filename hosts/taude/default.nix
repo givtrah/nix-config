@@ -12,7 +12,7 @@
       ./disko-config.nix
 
       ../../modules/common.nix
-
+      ../../modules/libs.nix
       ../../modules/users.nix
       ../../modules/locale_tz.nix
       ../../modules/sound.nix
@@ -22,7 +22,7 @@
       ../../modules/cosmic.nix
 
       ../../modules/sway.nix
-
+      ../../modules/distrobox.nix
 #      ../../modules/dropbox.nix
 
     ];

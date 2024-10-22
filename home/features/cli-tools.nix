@@ -6,6 +6,9 @@
     neofetch
     nnn # terminal file manager
 
+    ffmpeg
+    streamlink
+
     killall
 
     # archives
