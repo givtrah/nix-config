@@ -27,9 +27,6 @@ programs.bash.shellAliases = {
 };
 
 
-
-
-
   programs.kitty = let font_family = "JetBrainsMono NF"; in {
     enable = true;
     font = {
@@ -93,7 +90,9 @@ programs.bash.shellAliases = {
 
     shellIntegration.enableBashIntegration = true;
     shellIntegration.mode = "enabled";
-    theme = "One Half Dark";
+    themeFile = "OneHalfDark";
+
+# https://github.com/kovidgoyal/kitty-themes/tree/master/themes
 
 #        env.TERM = "xterm-256color";
 
