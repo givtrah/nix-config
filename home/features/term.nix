@@ -14,6 +14,17 @@
 # https://rycee.gitlab.io/home-manager/options.xhtml#opt-programs.kitty.enable
 # https://sw.kovidgoyal.net/kitty/shell-integration/
 
+programs.bash = {
+  enable = true;
+  };
+
+programs.bash.shellAliases = {
+  nswitch="sudo nixos-rebuild switch --flake . --impure";
+  nsgc="sudo nix-store --gc";
+  ngc="sudo nix-collect-garbage -d";
+  ngc7="sudo nix-collect-garbage --delete-older-than 7d";
+  ngc14="sudo nix-collect-garbage --delete-older-than 14d";
+};
 
 
 
