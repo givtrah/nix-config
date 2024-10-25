@@ -85,6 +85,14 @@ sudo nix flake update
 
 ```
 
+# Solve home "backup" problems / interactions between existing config files and nixos trying to override
+```
+journalctl -e --unit home-manager-USERNAME.service
+```
+Will tell you the problematic config dir / file
+
+
+
 # Reinstall notes
 "Burn" KDE Nix OS iso to USB
 
