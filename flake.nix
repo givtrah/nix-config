@@ -24,12 +24,15 @@
       url = "github:gmodena/nix-flatpak/?";
 #      inputs.nixpkgs.follows = "nixpkgs";
     };
+    zotero-nix = {
+      url = "github:camillemndn/zotero-nix";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-flatpak, nixos-cosmic, apple-silicon, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, nix-flatpak, nixos-cosmic, apple-silicon, zotero-nix, ... }@inputs: 
 
     let
-      specialArgs = { inherit inputs nixpkgs home-manager nix-flatpak nixos-cosmic; };
+      specialArgs = { inherit inputs nixpkgs home-manager nix-flatpak nixos-cosmic zotero-nix; };
       
       shared-modules = [
         {
@@ -42,7 +45,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
-	  home-manager.extraSpecialArgs = { inherit inputs nixpkgs nixos-cosmic; };
+	  home-manager.extraSpecialArgs = { inherit inputs nixpkgs nixos-cosmic zotero-nix; };
 	  home-manager.users.ohm.imports = [ 
 	    nix-flatpak.homeManagerModules.nix-flatpak
 	    ./home/common.nix

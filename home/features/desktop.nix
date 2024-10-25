@@ -1,4 +1,4 @@
-{ config, pkgs, ...}: {
+{ config, pkgs, nix-zotero, ...}: {
 
   home.packages = with pkgs; 
 
@@ -64,7 +64,7 @@
  ++
   # packages not available on aarch64 goes here 
     (if (pkgs.system == "aarch64-linux")
-    then [  ]
+    then [ zotero-nix.packages.aarch64-linux.default ]
   else
     (if (pkgs.system == "x86_64-linux")
       then [ zotero zoom-us steam-run zettlr nomachine-client ]
