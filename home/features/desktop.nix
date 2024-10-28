@@ -67,7 +67,7 @@
     then [ zotero-nix.packages.aarch64-linux.default ]
   else
     (if (pkgs.system == "x86_64-linux")
-      then [ zotero zoom-us steam-run zettlr nomachine-client ]
+      then [ zotero-nix zoom-us steam-run zettlr nomachine-client ]
       else []));
 
 # teams-for-linux
