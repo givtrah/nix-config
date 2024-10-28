@@ -1,4 +1,4 @@
-{ config, pkgs, ...}: {
+{ config, pkgs, zotero-nix, ...}: {
 
   # user configuration
   home.username = "ohm";

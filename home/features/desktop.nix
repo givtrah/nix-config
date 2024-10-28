@@ -1,4 +1,4 @@
-{ config, pkgs, nix-zotero, ...}: {
+{ config, pkgs, zotero-nix, ...}: {
 
   home.packages = with pkgs; 
 
