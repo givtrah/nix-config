@@ -58,7 +58,7 @@ let
   [ R-with-my-packages ] ++
    
     (if (pkgs.system == "aarch64-linux")
-    then [ ] # if rstudio is not working with aarch64 remove the package name inside [] // rstudio currently broken on aarch64
+    then [ RStudio-with-my-packages ] # if rstudio is not working with aarch64 remove the package name inside [] // rstudio currently broken on aarch64
   else
     (if (pkgs.system == "x86_64-linux")
       then [ RStudio-with-my-packages ]
