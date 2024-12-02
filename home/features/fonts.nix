@@ -8,8 +8,8 @@
   google-fonts
   corefonts
   vistafonts
-  nerdfonts
-
+#  nerdfonts
+  nerd-fonts.jetbrains-mono
 
   ];
 
