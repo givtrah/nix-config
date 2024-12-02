@@ -30,7 +30,7 @@ programs.bash.shellAliases = {
   programs.kitty = let font_family = "JetBrainsMono NF"; in {
     enable = true;
     font = {
-      package = pkgs.nerdfonts;
+      package = nerd-fonts.jetbrains-mono;
       name = font_family;
       size = 13;
     };

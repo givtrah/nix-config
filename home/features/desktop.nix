@@ -38,7 +38,7 @@
 #  steam-run 
   v4l-utils
   guvcview
-  nerdfonts
+#  nerdfonts
 
   inkscape
 

@@ -29,7 +29,7 @@
   v4l-utils
   guvcview
   usbutils
-  nerdfonts
+#  nerdfonts
 
   smartmontools
   gsmartcontrol
