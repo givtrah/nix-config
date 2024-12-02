@@ -4,6 +4,9 @@
 
   [
 
+
+    deskflow
+
 #    amarok
     clementine
     asunder # cd ripper
