@@ -37,7 +37,7 @@ home.pointerCursor = {
   sameboy # Nintendo Gameboy, Gameboy color, Super Gameboy
   fceux # NES
   punes-qt6 # NES
-  snes9x-gtk # SNES
+#  snes9x-gtk # SNES
   nanoboyadvance # Nintendo Gameboy Advance
   dolphin-emu # Nintendo Gamecube / Wii / triforce
   ryujinx # Nintendo Switch
