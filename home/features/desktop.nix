@@ -5,6 +5,8 @@
   [
 
 
+    calibre
+
     deskflow
 
 #    amarok
