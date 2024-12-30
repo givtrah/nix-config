@@ -46,7 +46,7 @@
         xorg.libXi
         xorg.libSM
         xorg.libICE
-        gnome2.GConf
+#        gnome2.GConf # removed on 2024-12-29 due to compile error
         nspr
         nss
         cups
@@ -96,7 +96,7 @@
         librsvg
         xorg.libXft
         libvdpau
-        gnome2.pango
+        pango
         cairo
         atk
         gdk-pixbuf

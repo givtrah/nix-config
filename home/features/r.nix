@@ -30,7 +30,7 @@ let
     officer
     tableone
     data_table
-    HDF5Array
+#    HDF5Array # failed to build on 2024-12-29
     ggvenn
     ggpubr
     limma

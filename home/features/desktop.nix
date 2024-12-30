@@ -13,7 +13,7 @@
     clementine
     asunder # cd ripper
     lame
-    beets
+#    beets # does not compile 2024-12-29
     kid3
 
     amdgpu_top

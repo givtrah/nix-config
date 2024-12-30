@@ -30,7 +30,7 @@ home.pointerCursor = {
   mednafen # multisystem emulator
   mednaffe # frontend for mednafen
 
-  desmume # Nintendo DS
+#  desmume # Nintendo DS - not compiling 2024-12-29
   melonDS # Nintendo DS
 #  lime3ds # Nintendo 3DS
   mgba # Nintendo Gameboy Advance
@@ -38,7 +38,7 @@ home.pointerCursor = {
   fceux # NES
   punes-qt6 # NES
 #  snes9x-gtk # SNES
-  nanoboyadvance # Nintendo Gameboy Advance
+#  nanoboyadvance # Nintendo Gameboy Advance - not compiling 2024-12-29
   dolphin-emu # Nintendo Gamecube / Wii / triforce
   ryujinx # Nintendo Switch
 
@@ -59,14 +59,14 @@ home.pointerCursor = {
   stella # Atari 2600
   openmsx # MSX
 #  fsuae # Amiga, not working right now
-  uae # Amiga
+#  uae # Amiga - failed to build on 2024-12-29
   vice # C-64
 
 #  emulationstation # Frontend currently with security issues
 
 
 #  heroic # heroic launcher
-  gogdl # gog downloader for heroic
+#  gogdl # gog downloader for heroic
 
   scummvm
 
@@ -88,7 +88,7 @@ home.pointerCursor = {
         pcsx2 # PS2
         cemu # Wii x86 only
         zsnes # SNES x86 only
-        heroic
+#        heroic - failed to build 2024-12-29
 
 
 
