@@ -16,9 +16,9 @@
       ../../modules/locale_tz.nix
       ../../modules/sddm.nix
       ../../modules/plasma6.nix
-      ../../modules/hyprland.nix
+#      ../../modules/hyprland.nix
       ../../modules/users.nix
-#     ../../modules/cosmic.nix
+     ../../modules/cosmic.nix
       ../../modules/distrobox.nix
     ];
 

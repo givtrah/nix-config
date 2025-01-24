@@ -7,7 +7,7 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    theme = "catppuccin-mocha";
+#    theme = "catppuccin-mocha";
   };
 
 environment.systemPackages = with pkgs; [(

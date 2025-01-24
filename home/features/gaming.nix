@@ -42,7 +42,7 @@ home.pointerCursor = {
   dolphin-emu # Nintendo Gamecube / Wii / triforce
   ryujinx # Nintendo Switch
 
-  duckstation # PS1
+#  duckstation # PS1 # moved to x86 only as it does not compile on aarch64 2024-12-31
 #  pcsxr # PS1
   ppsspp-sdl-wayland # Playstation portable (wayland)
   rpcs3 # PS3
@@ -88,6 +88,7 @@ home.pointerCursor = {
         pcsx2 # PS2
         cemu # Wii x86 only
         zsnes # SNES x86 only
+        duckstation # does not compile on aarch64 2024-12-31
 #        heroic - failed to build 2024-12-29
 
 

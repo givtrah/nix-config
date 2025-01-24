@@ -7,7 +7,7 @@
 
     calibre
 
-    deskflow
+#    deskflow
 
 #    amarok
     clementine
@@ -28,8 +28,7 @@
     telegram-desktop
     kdePackages.kcalc
     
-    legcord
-#    calibre
+#    legcord      # uses electron! (electron-unwrapped)
   obsidian
   jellyfin-media-player
   mesa-demos # includes everything in glxinfo
@@ -69,7 +68,7 @@
  ++
   # packages not available on aarch64 goes here 
     (if (pkgs.system == "aarch64-linux")
-    then [ zotero-nix.packages.aarch64-linux.default ]
+    then [ zotero-nix.packages.aarch64-linux.default]
   else
     (if (pkgs.system == "x86_64-linux")
       then [ zotero zoom-us steam-run zettlr nomachine-client ]

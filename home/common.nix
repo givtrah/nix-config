@@ -17,7 +17,7 @@
   imports = [
   #  inputs.nix-flatpak.homeManagerModules.nix-flatpak	 
 
-  ./features/gaming.nix
+#  ./features/gaming.nix
 
   ./features/flatpak.nix
 
@@ -33,7 +33,7 @@
 
   ./features/term.nix
 
-  ./features/swayfx.nix
+#  ./features/swayfx.nix
 
   ];
 
