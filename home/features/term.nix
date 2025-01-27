@@ -98,7 +98,21 @@ programs.bash.shellAliases = {
 
   };
 
+  programs.ghostty = {
+    enable = true;
 
+    settings = {
+      theme = "tokyonight";
+      font-size = 13;
+#      window-decoration = false;
+      window-theme = "dark";
+#      keybind = [
+#        "ctrl+h=goto_split:left"
+#        "ctrl+l=goto_split:right"
+#      ];
+      };
+
+    };
 
 
   # starship - an customizable prompt for any shell
