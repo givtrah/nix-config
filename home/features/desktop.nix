@@ -3,6 +3,10 @@
   home.packages = with pkgs; 
 
   [
+    lazygit
+    fzf
+    ripgrep
+    fd
 
 
     calibre

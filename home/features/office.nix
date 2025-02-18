@@ -21,7 +21,7 @@
   ++
    
     (if (pkgs.system == "aarch64-linux")
-    then [ libreoffice ]
+    then [ ] # libreoffice ] # libreoffice from flatpaks - due to compile error on 2025-02-18
   else
     (if (pkgs.system == "x86_64-linux")
       then [ libreoffice-fresh onlyoffice-bin_latest ]

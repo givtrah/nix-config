@@ -10,7 +10,10 @@
 
   # Enable flatpaks
   services.flatpak.enable = true;
-  
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "SDL_ttf-2.0.11" ];
+
   # Enable OpenGL
   hardware.graphics.enable = true;
 
