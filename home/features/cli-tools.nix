@@ -3,6 +3,8 @@
   home.packages = with pkgs; 
 
   [
+
+    luarocks
     neofetch
     nnn # terminal file manager
 

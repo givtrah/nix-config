@@ -34,6 +34,7 @@
   ./features/term.nix
 
   ./features/nvim-fix.nix
+  ./features/nvim-lazy.nix
 
 #  ./features/swayfx.nix
 

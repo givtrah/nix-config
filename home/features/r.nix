@@ -30,6 +30,8 @@ let
     officer
     tableone
     data_table
+    languageserver
+
 #    HDF5Array # failed to build on 2024-12-29
     ggvenn
     ggpubr
