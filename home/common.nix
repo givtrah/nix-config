@@ -33,6 +33,8 @@
 
   ./features/term.nix
 
+  ./features/nvim-fix.nix
+
 #  ./features/swayfx.nix
 
   ];

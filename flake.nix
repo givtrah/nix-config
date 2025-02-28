@@ -13,8 +13,7 @@
 #       url = "github:oliverbestmann/nixos-apple-silicon";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-
+    
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,10 +31,10 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-flatpak, nixos-cosmic, apple-silicon, zotero-nix, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, nix-flatpak, nixos-cosmic, apple-silicon, nvf, zotero-nix, ... }@inputs: 
 
     let
-      specialArgs = { inherit inputs nixpkgs home-manager nix-flatpak nixos-cosmic zotero-nix; };
+      specialArgs = { inherit inputs nixpkgs home-manager nix-flatpak nixos-cosmic nvf zotero-nix; };
       
       shared-modules = [
         {
@@ -48,9 +47,10 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
-	  home-manager.extraSpecialArgs = { inherit inputs nixpkgs nixos-cosmic zotero-nix; };
+	  home-manager.extraSpecialArgs = { inherit inputs nixpkgs nixos-cosmic nvf zotero-nix; };
 	  home-manager.users.ohm.imports = [ 
 	    nix-flatpak.homeManagerModules.nix-flatpak
+	    nvf.homeManagerModules.default
 	    ./home/common.nix
           ];
 	}
