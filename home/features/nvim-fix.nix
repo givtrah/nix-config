@@ -60,13 +60,13 @@ in {
     nvim-depends-pkgconfig
     ripgrep
   ];
-  home.extraOutputsToInstall = "nvim-depends";
+  home.extraOutputsToInstall = [ "nvim-depends" ];
   home.shellAliases.nvim = (concatStringsSep " " buildEnv)
     + " SQLITE_CLIB_PATH=${pkgs.sqlite.out}/lib/libsqlite3.so " + "nvim";
 
   programs.neovim = {
     enable = true;
-    package = pkgs.neovim;
+    package = pkgs.neovim-unwrapped;
 
     withNodeJs = true;
     withPython3 = true;
@@ -88,5 +88,5 @@ in {
 
     extraLuaPackages = ls: with ls; [ luarocks ];
   };
-};
+}
 
