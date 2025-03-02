@@ -7,6 +7,7 @@
     with pkgs;
 
     [
+      wl-clipboard
       git
       lazygit
       curl
@@ -38,6 +39,7 @@
       jdk
 
       php
+      phpPackages.composer
 
       (python3.withPackages (ps: with ps; [ pip ]))
       #      python3Packages.pip
