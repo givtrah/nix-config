@@ -13,6 +13,8 @@
 
     killall
 
+    lm_sensors
+
     # archives
     zip
     xz
