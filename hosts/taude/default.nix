@@ -19,7 +19,7 @@
       ../../modules/sddm.nix
       ../../modules/plasma6.nix
 
-      ../../modules/cosmic.nix
+#      ../../modules/cosmic.nix
 
       ../../modules/sway.nix
       ../../modules/distrobox.nix
@@ -53,9 +53,9 @@
   boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
   
   # setup the ivshmem tmp file for looking glass
-  systemd.tmpfiles.rules = [
-  "f /dev/shm/looking-glass 0660 ohm qemu-libvirtd -"
-  ];
+#  systemd.tmpfiles.rules = [
+#  "f /dev/shm/looking-glass 0660 ohm qemu-libvirtd -"
+#  ];
 
 
   # Enable hugepages for better (windows) VM performance
@@ -65,17 +65,17 @@
 
   # mount additional drives (that I created myself)
 
-  fileSystems."/mnt/emu8tb" =
-    { device = "/dev/disk/by-uuid/52b69fea-5db0-429c-bb26-01f6d9d1ed1f";
-      fsType = "btrfs";
-      options = [ "compress=zstd" "noatime" "discard=async" ];
-    };
+#  fileSystems."/mnt/emu8tb" =
+#    { device = "/dev/disk/by-uuid/52b69fea-5db0-429c-bb26-01f6d9d1ed1f";
+#      fsType = "btrfs";
+#      options = [ "compress=zstd" "noatime" "discard=async" ];
+#    };
 
-  fileSystems."/mnt/emu" =
-    { device = "/dev/disk/by-uuid/81093fa1-9e80-4b4e-915d-0c67e5a08fdf";
-      fsType = "btrfs";
-      options = [ "compress=zstd" "noatime" "discard=async" ];
-    };
+#  fileSystems."/mnt/emu" =
+#    { device = "/dev/disk/by-uuid/81093fa1-9e80-4b4e-915d-0c67e5a08fdf";
+#      fsType = "btrfs";
+#      options = [ "compress=zstd" "noatime" "discard=async" ];
+#    };
 
 
 
@@ -170,7 +170,7 @@
   # and migrated your data accordingly.
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
 
 }
 

@@ -98,7 +98,7 @@
 	 ./hosts/taude
 	 home-manager.nixosModules.home-manager { 
 	   home-manager.users.ohm = {
-	     home.stateVersion = "24.05";
+	     home.stateVersion = "24.11";
 	     imports = [ ]; 
 	 };
 	}

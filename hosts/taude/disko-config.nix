@@ -3,7 +3,7 @@
     disk = {
       disk1 = {
       type = "disk";
-      device = "/dev/nvme3n1";
+      device = "/dev/nvme2n1";
       content = {
         type = "gpt";
         partitions = {
@@ -24,7 +24,7 @@
               };
             };
           root = {
-            size = "512G";
+            size = "640G";
             content = {
               type = "btrfs";
               extraArgs = [ "-f" ]; # Override existing partition, probably means format it
@@ -57,7 +57,7 @@
        };
     disk2 = {
       type = "disk";
-      device = "/dev/nvme1n1";
+      device = "/dev/nvme0n1";
       content = {
         type = "gpt";
         partitions = {
