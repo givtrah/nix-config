@@ -20,8 +20,8 @@
   [
 
   # browsers
-#  librewolf
-#   floorp
+  librewolf
+  floorp
 
   brave
   chromium
