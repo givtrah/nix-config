@@ -85,6 +85,10 @@ nixpkgs.config.permittedInsecurePackages = [
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  
+
   
   # Enable CUPS, ipp-usb and avahi to print documents (CUPS may not be necessary!).
   services.printing.enable = true;
