@@ -8,6 +8,8 @@
     neofetch
     nnn # terminal file manager
 
+
+    hugo
     ffmpeg
     streamlink
 
