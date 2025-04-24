@@ -81,6 +81,7 @@
 	specialArgs = specialArgs;
 	modules = shared-modules ++ [
 	  ./hosts/taupa
+	  nixos-cosmic.nixosModules.default
 	  home-manager.nixosModules.home-manager { 
 	    home-manager.users.ohm = {
 	      home.stateVersion = "24.05";

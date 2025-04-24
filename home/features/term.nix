@@ -65,7 +65,7 @@
         window_alert_on_bell = false;
         bell_on_tab = false;
         window_margin_width = 0;
-        background_opacity = 1;
+        background_opacity = 0.85;
 
         adjust_line_height = "130%";
 
