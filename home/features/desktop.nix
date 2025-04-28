@@ -8,7 +8,7 @@
     ripgrep
     fd
 
-
+    upscayl  # AI upscaler
 
 #    deskflow
 

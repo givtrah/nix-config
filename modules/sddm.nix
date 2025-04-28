@@ -10,6 +10,16 @@
 #    theme = "catppuccin-mocha";
   };
 
+
+# Auto login to kwallet upon login using sddm
+security.pam.services.sddm = {
+  kwallet = {
+    enable = true;
+    package = pkgs.kdePackages.kwallet-pam;
+  };
+};
+
+
 environment.systemPackages = with pkgs; [(
   catppuccin-sddm.override {
     flavor = "mocha";
