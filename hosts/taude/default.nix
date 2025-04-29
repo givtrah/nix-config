@@ -25,6 +25,8 @@
       ../../modules/distrobox.nix
 #      ../../modules/dropbox.nix
 
+	../../modules/hyprland.nix
+
     ];
 
   # Use the systemd-boot EFI boot loader.
