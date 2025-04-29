@@ -40,6 +40,12 @@
     zathura
     mpv
     imv
+    
+    # extra...
+    wofi # menu
+    yazi # file-manager
+
+
   ];
 
 
