@@ -24,6 +24,7 @@
 
       ../../modules/cosmic.nix
 
+      ../../modules/libs.nix
 
     ];
 
