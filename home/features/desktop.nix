@@ -9,7 +9,6 @@
     fd
 
 
-
 #    deskflow
 
 #    amarok
@@ -74,7 +73,10 @@
     then [ zotero-nix.packages.aarch64-linux.default]
   else
     (if (pkgs.system == "x86_64-linux")
-      then [ zotero zoom-us steam-run zettlr nomachine-client calibre ]
+      then [ zotero zoom-us steam-run zettlr nomachine-client calibre 
+
+    upscayl  # AI upscaler
+        ]
       else []));
 
 # teams-for-linux

@@ -34,9 +34,18 @@
     hyprcursor # Hyprland cursor format, library and utilities
     hyprpaper # Blazing fast wayland wallpaper utility
 
+    pywal16
+
+
     zathura
     mpv
     imv
+    
+    # extra...
+    wofi # menu
+    yazi # file-manager
+
+
   ];
 
 
