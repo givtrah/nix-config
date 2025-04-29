@@ -17,11 +17,12 @@
       ../../modules/users.nix
       ../../modules/locale_tz.nix
       ../../modules/sound.nix
+      
       ../../modules/sddm.nix
+
       ../../modules/plasma6.nix
-
       ../../modules/sway.nix
-
+      ../../modules/hyprland.nix
       ../../modules/cosmic.nix
 
       ../../modules/libs.nix
