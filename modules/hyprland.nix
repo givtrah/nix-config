@@ -7,6 +7,7 @@
   environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
 
 
+
 # Hyprland related packages
   environment.systemPackages = with pkgs; [
     hyprdim # Automatically dim windows when switching between them
@@ -37,6 +38,15 @@
     pywal16
 
 
+    swaynotificationcenter # notification daemon
+	libsForQt5.qt5.qtwayland
+#	qtwayland # cross-platform framework needed for QT support on Wayland
+    
+    xdg-desktop-portal-hyprland
+    xdg-desktop-portal-gnome
+
+    waybar
+
     zathura
     mpv
     imv
@@ -44,6 +54,15 @@
     # extra...
     wofi # menu
     yazi # file-manager
+
+    bluez
+    bluez-tools
+    bluetui
+    wl-clipboard
+    upower
+
+
+
 
 
   ];

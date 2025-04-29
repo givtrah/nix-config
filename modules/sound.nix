@@ -2,7 +2,7 @@
 {
   # disable default sound module. see https://nixos.wiki/wiki/PipeWire
 #  sound.enable = false; # sound.enable only meant for alsa sound
-  services.pulseaudio.enable = false;
+  services.pulseaudio.enable = false; 
 
   security.rtkit.enable = true;
 
