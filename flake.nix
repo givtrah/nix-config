@@ -29,12 +29,15 @@
     zotero-nix = {
       url = "github:camillemndn/zotero-nix";
     };
+    hyprpanel = { 
+      url = "github:Jas-SinghFSU/HyprPanel";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-flatpak, nixos-cosmic, apple-silicon, zotero-nix, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, nix-flatpak, nixos-cosmic, apple-silicon, zotero-nix, hyprpanel, ... }@inputs: 
 
     let
-      specialArgs = { inherit inputs nixpkgs home-manager nix-flatpak nixos-cosmic zotero-nix; };
+      specialArgs = { inherit inputs nixpkgs home-manager nix-flatpak nixos-cosmic zotero-nix hyprpanel; };
       
       shared-modules = [
         {
@@ -82,6 +85,8 @@
 	modules = shared-modules ++ [
 	  ./hosts/taupa
 	  nixos-cosmic.nixosModules.default
+	  inputs.hyprpanel.homeManagerModules.hyprpanel
+
 	  home-manager.nixosModules.home-manager { 
 	    home-manager.users.ohm = {
 	      home.stateVersion = "24.05";

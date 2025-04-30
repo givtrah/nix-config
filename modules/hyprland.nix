@@ -8,6 +8,7 @@
 
 
 
+
 # Hyprland related packages
   environment.systemPackages = with pkgs; [
     hyprdim # Automatically dim windows when switching between them
@@ -57,6 +58,8 @@
 
     bluez
     bluez-tools
+    bluez-experimental
+    blueman
     bluetui
     wl-clipboard
     upower
