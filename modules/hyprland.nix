@@ -66,7 +66,7 @@
 
     pulsemixer # cli volume control
 
-
+    hyprpanel
 
   ];
 

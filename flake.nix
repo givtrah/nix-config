@@ -38,7 +38,9 @@
 
     let
       specialArgs = { inherit inputs nixpkgs home-manager nix-flatpak nixos-cosmic zotero-nix hyprpanel; };
-      
+      overlays = [
+	inputs.hyprpanel.overlay
+      ];
       shared-modules = [
         {
           nix.settings = {
@@ -50,7 +52,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
-	  home-manager.extraSpecialArgs = { inherit inputs nixpkgs nixos-cosmic zotero-nix; };
+	  home-manager.extraSpecialArgs = { inherit inputs nixpkgs nixos-cosmic zotero-nix hyprpanel; };
 	  home-manager.users.ohm.imports = [ 
 	    nix-flatpak.homeManagerModules.nix-flatpak
 	    ./home/common.nix
@@ -85,8 +87,6 @@
 	modules = shared-modules ++ [
 	  ./hosts/taupa
 	  nixos-cosmic.nixosModules.default
-	  inputs.hyprpanel.homeManagerModules.hyprpanel
-
 	  home-manager.nixosModules.home-manager { 
 	    home-manager.users.ohm = {
 	      home.stateVersion = "24.05";
@@ -101,26 +101,12 @@
         system = "x86_64-linux";
 	specialArgs = specialArgs;
 	modules = shared-modules ++ [
-	 ./hosts/taude
+	  ./hosts/taude
+	  nixos-cosmic.nixosModules.default
+	  {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
 	 home-manager.nixosModules.home-manager { 
 	   home-manager.users.ohm = {
 	     home.stateVersion = "24.11";
-	     imports = [ ]; 
-	 };
-	}
-	];
-      };
-
-
-      # Lenovo Laptop (16/2 TB) - Nix OS unstable
-      taulap = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-	specialArgs = specialArgs;
-	modules = shared-modules ++ [
-	 ./hosts/taulap
-	 home-manager.nixosModules.home-manager { 
-	   home-manager.users.ohm = {
-	     home.stateVersion = "24.05";
 	     imports = [ ]; 
 	 };
 	}

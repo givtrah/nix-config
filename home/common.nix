@@ -45,9 +45,9 @@
 # Use `dconf watch /` to track stateful changes you are doing, then set them here.
 
 
-  dconf.settings."org/gtk/settings/file-chooser" = {
+    dconf.settings."org/gtk/settings/file-chooser" = {
     sort-directories-first = true;
-  };
+   };
 
 
 # Packages that should be installed to the user profile.
