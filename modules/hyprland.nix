@@ -64,7 +64,7 @@
     wl-clipboard
     upower
 
-
+    pulsemixer # cli volume control
 
 
 
