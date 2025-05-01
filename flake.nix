@@ -71,6 +71,7 @@
         modules =  shared-modules ++ [
 	  ./hosts/taumac
 	  inputs.apple-silicon.nixosModules.apple-silicon-support
+	  {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
           home-manager.nixosModules.home-manager {
 	    home-manager.users.ohm = {
 	      home.stateVersion = "24.05";
