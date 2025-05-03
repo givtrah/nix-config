@@ -18,10 +18,10 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixos-cosmic = {
-      url = "github:lilyinstarlight/nixos-cosmic";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #    nixos-cosmic = {
+    #  url = "github:lilyinstarlight/nixos-cosmic";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    # };
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak/?";
 #      inputs.nixpkgs.follows = "nixpkgs";
@@ -34,25 +34,25 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-flatpak, nixos-cosmic, apple-silicon, zotero-nix, hyprpanel, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, nix-flatpak, apple-silicon, zotero-nix, hyprpanel, ... }@inputs: 
 
     let
-      specialArgs = { inherit inputs nixpkgs home-manager nix-flatpak nixos-cosmic zotero-nix hyprpanel; };
+      specialArgs = { inherit inputs nixpkgs home-manager nix-flatpak zotero-nix hyprpanel; };
       overlays = [
 	inputs.hyprpanel.overlay
       ];
       shared-modules = [
         {
           nix.settings = {
-            substituters = [ "https://cosmic.cachix.org/" ]; # nixos-cosmic build repo
-            trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+	    #            substituters = [ "https://cosmic.cachix.org/" ]; # nixos-cosmic build repo
+	    #            trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
           };
         }
 	home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
-	  home-manager.extraSpecialArgs = { inherit inputs nixpkgs nixos-cosmic zotero-nix hyprpanel; };
+	  home-manager.extraSpecialArgs = { inherit inputs nixpkgs zotero-nix hyprpanel; };
 	  home-manager.users.ohm.imports = [ 
 	    nix-flatpak.homeManagerModules.nix-flatpak
 	    ./home/common.nix
@@ -87,7 +87,7 @@
 	specialArgs = specialArgs;
 	modules = shared-modules ++ [
 	  ./hosts/taupa
-	  nixos-cosmic.nixosModules.default
+	    #	  nixos-cosmic.nixosModules.default
 	  home-manager.nixosModules.home-manager { 
 	    home-manager.users.ohm = {
 	      home.stateVersion = "24.05";
@@ -103,7 +103,7 @@
 	specialArgs = specialArgs;
 	modules = shared-modules ++ [
 	  ./hosts/taude
-	  nixos-cosmic.nixosModules.default
+	    #	  nixos-cosmic.nixosModules.default
 	  {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
 	 home-manager.nixosModules.home-manager { 
 	   home-manager.users.ohm = {
