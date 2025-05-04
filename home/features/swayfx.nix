@@ -41,7 +41,8 @@
     '';
     config = {
 
-         input = { xkb_layout = "dk"; xkb_options = "grp:win_space_toggle"; };
+      # HOW THE HELL DO I GET DANISH KEYBOARD
+      #         input = { xkb_layout = "dk"; xkb_options = "grp:win_space_toggle"; };
       # super key
       modifier = "Mod4";
 
