@@ -8,7 +8,7 @@
     ripgrep
     fd
 
-
+    gimp3-with-plugins
 #    deskflow
 
 #    amarok
