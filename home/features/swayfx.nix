@@ -11,8 +11,11 @@
     mako
 
     ulauncher
+
   ];
 
+  # exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+  # Although i use polkit-kde but it should work with polkit-gnome as well
 
   programs.swaylock.enable = true;
   services.swayidle.enable = true;
@@ -37,6 +40,8 @@
       NIXOS_OZONE_WL = "1";
     '';
     config = {
+
+         input = { xkb_layout = "dk"; xkb_options = "grp:win_space_toggle"; };
       # super key
       modifier = "Mod4";
 
@@ -59,13 +64,13 @@
         "${mod}+Return" = "exec ${term}";
         "${mod}+d" = "exec ${app-menu}";
         "${mod}+Escape" = "exec ${power-menu}";
-        "${mod}+Shift+q" = "kill";
+        "${mod}+q" = "kill";
         # Reload the configuration file
-        "${mod}+Shift+c" = "reload";
+        "${mod}+Shift+r" = "reload";
         # Screenshot
         "${mod}+g" = "exec wayshot";
         # Exit sway (logs you out of your Wayland session)
-        "${mod}+Shift+e" = "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
+        "${mod}+Shift+Escape" = "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
         # Move your focus around
         "${mod}+h" = "focus left";
         "${mod}+j" = "focus down";
@@ -80,7 +85,7 @@
         "${mod}+Shift+h" = "move left";
         "${mod}+Shift+j" = "move down";
         "${mod}+Shift+k" = "move up";
-        "${mod}+Shift+l" = "move right";
+            "${mod}+Shift+l" = "move right";
         # Ditto, with arrow keys
         "${mod}+Shift+Left" = "move left";
         "${mod}+Shift+Down" = "move down";
