@@ -21,6 +21,8 @@
 
       ../../modules/cosmic.nix
 
+      ../../modules/ollama.nix
+      
       ../../modules/sway.nix
       ../../modules/distrobox.nix
 #      ../../modules/dropbox.nix
