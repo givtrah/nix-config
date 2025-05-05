@@ -37,7 +37,7 @@
     hyprpaper # Blazing fast wayland wallpaper utility
 
     pywal16
-
+    hellwal
 
     swaynotificationcenter # notification daemon
 	libsForQt5.qt5.qtwayland
