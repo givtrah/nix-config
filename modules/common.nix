@@ -58,7 +58,7 @@
 
   programs.dconf.enable = true;
 
-
+  nix.settings.trusted-users = [ "root" "ohm" ];
 
   environment.variables.EDITOR = "nvim"; # default editor is neovim
   

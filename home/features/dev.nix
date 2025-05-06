@@ -6,6 +6,10 @@
   vscode
   yarn
 
+  devenv # for python development (any..) 
+  direnv 
+
+
   ];
 
 
