@@ -22,6 +22,7 @@
       ../../modules/distrobox.nix
       ../../modules/libs.nix
       ../../modules/sway.nix
+      ../../modules/hosts.nix
     ];
 
 #  nixpkgs.config.allowBroken = true; # BAD IDEA! needed for compatibility with x86 as rstudio is currently broken on aarch64
