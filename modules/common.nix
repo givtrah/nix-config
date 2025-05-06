@@ -111,7 +111,7 @@ programs.bash = {
   vim
 
   tailscale
-
+  rclone
   # qutebrowser # backup browser just in case!
 
   adwaita-icon-theme # for dconf enable above, fix gnome window decorations

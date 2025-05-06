@@ -27,6 +27,8 @@
 
       ../../modules/libs.nix
 
+      ../../modules/hosts.nix
+
     ];
 
 nixpkgs.config.permittedInsecurePackages = [
