@@ -19,6 +19,8 @@
 
 #  ./features/gaming.nix
 
+
+  ./features/dev.nix
   ./features/flatpak.nix
 
   ./features/r.nix
