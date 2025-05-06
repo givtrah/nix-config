@@ -64,6 +64,8 @@
     wl-clipboard
     upower
 
+    networkmanagerapplet
+
     pulsemixer # cli volume control
 
     hyprpanel
