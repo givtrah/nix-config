@@ -87,7 +87,7 @@
 	specialArgs = specialArgs;
 	modules = shared-modules ++ [
 	  ./hosts/taupa
-	    #	  nixos-cosmic.nixosModules.default
+	  {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
 	  home-manager.nixosModules.home-manager { 
 	    home-manager.users.ohm = {
 	      home.stateVersion = "24.05";
@@ -103,7 +103,6 @@
 	specialArgs = specialArgs;
 	modules = shared-modules ++ [
 	  ./hosts/taude
-	    #	  nixos-cosmic.nixosModules.default
 	  {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
 	 home-manager.nixosModules.home-manager { 
 	   home-manager.users.ohm = {
