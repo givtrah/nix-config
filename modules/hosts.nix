@@ -6,5 +6,6 @@
   networking.hosts = {
     "100.97.227.101" = [ "tauml" ];
 
+  };
 }
 
