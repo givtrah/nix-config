@@ -119,7 +119,7 @@ programs.bash = {
   wireguard-tools
 
   cmake
-
+  sshfs
 
   # needed systemwide packages for neovim kickstart
   gnumake
