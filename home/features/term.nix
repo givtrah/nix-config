@@ -99,10 +99,16 @@
     enable = true;
 
     settings = {
+      alpha-blending = "linear-corrected";
+      background-opacity = "0.95";
+      background-blur = true;
+      window-decoration = "none";
       theme = "tokyonight";
       font-size = 13;
       #      window-decoration = false;
       window-theme = "ghostty";
+      # window-theme = "dark";
+
       #      keybind = [
       #        "ctrl+h=goto_split:left"
       #        "ctrl+l=goto_split:right"
