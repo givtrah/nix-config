@@ -98,7 +98,7 @@
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
-  services.blueman.enable = true;
+  services.blueman.enable = true; # should probably not be enabled when using KDE, but doesn't matter much except giving an additional tray icon.
 
   # Enable CUPS, ipp-usb and avahi to print documents (CUPS may not be necessary!).
   services.printing.enable = true;
