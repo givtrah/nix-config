@@ -8,7 +8,6 @@
   hunspellDicts.da_DK
   hunspellDicts.en_US
 
-  pdfsam-basic
 
 #  onlyoffice-bin_latest
 
@@ -24,7 +23,7 @@
     then [ ] # libreoffice ] # libreoffice from flatpaks - due to compile error on 2025-02-18
   else
     (if (pkgs.system == "x86_64-linux")
-      then [ libreoffice-fresh onlyoffice-bin_latest ]
+      then [ libreoffice-fresh onlyoffice-bin_latest pdfsam-basic ]
       else []));
 
 
