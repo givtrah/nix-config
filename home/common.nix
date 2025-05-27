@@ -19,6 +19,8 @@
 
 #  ./features/gaming.nix
 
+  ./features/bash.nix
+  ./features/termnals.nix
 
   ./features/dev.nix
   ./features/flatpak.nix
@@ -33,7 +35,6 @@
   ./features/desktop.nix
   ./features/qemu.nix
 
-  ./features/term.nix
 
   ./features/nvim-fix.nix
   ./features/nvim-lazy.nix
