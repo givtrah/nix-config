@@ -19,7 +19,6 @@
       ../../modules/sound.nix
       ../../modules/sddm.nix
       ../../modules/plasma6.nix
-      ../../modules/flatpak.nix
 
     ];
 

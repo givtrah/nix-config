@@ -1,8 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  
-
 
   # fix non-nix programs not working (taken from https://nix.dev/guides/faq.html) 
 #  programs.nix-ld.enable = true;
@@ -55,6 +53,7 @@
         libusb1
         dbus-glib
         ffmpeg
+
         # Only libraries are needed from those two
         libudev0-shim
         
@@ -105,6 +104,7 @@
         dbus
         alsa-lib
         expat
+        
         # Needed for electron
         libdrm
         mesa
