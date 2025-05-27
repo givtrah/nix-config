@@ -11,6 +11,15 @@
     ngc = "sudo nix-collect-garbage -d";
     ngc7 = "sudo nix-collect-garbage --delete-older-than 7d";
     ngc14 = "sudo nix-collect-garbage --delete-older-than 14d";
+    
+    cat = "bat --paging=never";
+    ls = "eza";
+    cd = "zoxide";
+
+    # ripgrep = "grep";
+
+
+
   };
 
   # starship - an customizable prompt for any shell

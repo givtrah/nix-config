@@ -34,7 +34,8 @@
     then [ ]
   else
     (if (pkgs.system == "x86_64-linux")
-      then [ microsoft-edge google-chrome ]
+      then [ # microsoft-edge                        # Edge unmaintained as of 2025-05-27
+             google-chrome ]
       else []));
 
 

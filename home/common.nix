@@ -20,7 +20,7 @@
 #  ./features/gaming.nix
 
   ./features/bash.nix
-  ./features/termnals.nix
+  ./features/terminals.nix
 
   ./features/dev.nix
   ./features/flatpak.nix

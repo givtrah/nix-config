@@ -22,7 +22,7 @@ let
 # let
   # Define your desired packages here
   myRPackages = with rPackages; [
-    colorout
+        #    colorout
     tidyverse
     pastecs
     jtools

@@ -7,7 +7,25 @@
     luarocks
     neofetch
     nnn # terminal file manager
+  
+    
 
+
+    # replacements
+    eza # ls replacement (exa, maintained, aliased to ls)
+    bat # cat replacement (aliased to cat)
+    ripgrep # grep replacement (not aliased)
+    zoxide # cd replacement (aliased to cd)
+    fd # find replacement (not aliased)
+    
+
+    # replacements end
+
+    dua # du improved / interactive version
+
+    kew # command-line music player
+
+    yt-dlp # youtube downloader
 
     hugo
     ffmpeg
