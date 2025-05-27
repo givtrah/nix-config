@@ -14,7 +14,7 @@
     
     cat = "bat --paging=never";
     ls = "eza";
-    cd = "zoxide";
+    z = "zoxide";
 
     # ripgrep = "grep";
 
