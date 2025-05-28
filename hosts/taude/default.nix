@@ -27,7 +27,7 @@
       ../../modules/distrobox.nix
 #      ../../modules/dropbox.nix
 
-      #	../../modules/hyprland.nix
+      ../../modules/hyprland.nix
 
     ];
 

@@ -56,11 +56,11 @@
     wofi # menu
     yazi # file-manager
 
-    bluez
-    bluez-tools
-    bluez-experimental
-    blueman
-    bluetui
+    #    bluez
+    # bluez-tools
+    # bluez-experimental
+    #blueman
+    # bluetui
     wl-clipboard
     upower
 
@@ -68,7 +68,7 @@
 
     pulsemixer # cli volume control
 
-    hyprpanel
+    #    hyprpanel
 
   ];
 
