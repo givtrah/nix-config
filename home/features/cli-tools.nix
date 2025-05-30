@@ -9,7 +9,7 @@
     nnn # terminal file manager
   
     
-
+    htop
 
     # replacements
     eza # ls replacement (exa, maintained, aliased to ls)

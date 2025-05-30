@@ -64,7 +64,7 @@ nixpkgs.config.permittedInsecurePackages = [
 
 
   # Enable hugepages for better (windows) VM performance
-  boot.kernelParams = ["hugepagesz=1G" "hugepages=24"]; # remember to enable in libvirt... 
+  #  boot.kernelParams = ["hugepagesz=1G" "hugepages=24"]; # remember to enable in libvirt... 
 
 
   # mount additional drives (that I created myself)

@@ -4,7 +4,7 @@
 
   [
 
-
+  font-awesome
   google-fonts
   corefonts
   vistafonts

@@ -30,6 +30,9 @@
     hyprland-qt-support # A Qt6 QML provider for hypr* apps
     hyprland-activewindow # Multi-monitor-aware Hyprland workspace widget helper
 
+    hyprlandPlugins.hyprsplit # AwesomeWM / DWM / Krohnkite like workspaces (From 1 per monitor)
+    hyprlandPlugins.hyprtrails # Trails after moving windows
+
 
     pyprland
     hyprpicker # Wlroots-compatible Wayland color picker that does not suck
@@ -47,6 +50,8 @@
     xdg-desktop-portal-gnome
 
     waybar
+    cava # console based audio visualizer (plugin for waybar)
+    libcava
 
     zathura
     mpv
@@ -57,9 +62,9 @@
     yazi # file-manager
 
     #    bluez
-    # bluez-tools
-    # bluez-experimental
-    #blueman
+    bluez-tools
+    bluez-experimental
+    blueman
     # bluetui
     wl-clipboard
     upower
