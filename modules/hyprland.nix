@@ -59,6 +59,7 @@
     
     # extra...
     wofi # menu
+    walker # menu
     yazi # file-manager
 
     #    bluez
