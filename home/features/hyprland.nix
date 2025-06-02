@@ -7,8 +7,6 @@
   home.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
 
 
-
-
 # Hyprland related packages
   home.packages = with pkgs; [
     hyprdim # Automatically dim windows when switching between them
