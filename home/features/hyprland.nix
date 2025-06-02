@@ -51,7 +51,6 @@
 
     waybar
     cava # console based audio visualizer (plugin for waybar)
-    libcava
 
     zathura
     mpv
