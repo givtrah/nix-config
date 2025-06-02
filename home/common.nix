@@ -40,7 +40,8 @@
   ./features/nvim-lazy.nix
 
   ./features/swayfx.nix
-
+   
+  ./features/hyprland.nix
 #  ./features/swayfx.nix
 
   ];

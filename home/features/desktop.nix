@@ -51,7 +51,6 @@
   kitty-themes
   kitty-img
   starship
-  pywal
 
 #  zettlr
   remmina
