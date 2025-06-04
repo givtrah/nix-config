@@ -19,7 +19,6 @@
     kid3
 
     amdgpu_top
-    lact
     piper
 
     gnome-multi-writer
@@ -72,7 +71,7 @@
     then [ zotero-nix.packages.aarch64-linux.default]
   else
     (if (pkgs.system == "x86_64-linux")
-      then [ zotero zoom-us steam-run zettlr nomachine-client calibre 
+      then [  lact zotero zoom-us steam-run zettlr nomachine-client calibre 
 
     upscayl  # AI upscaler
         ]
